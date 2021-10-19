@@ -1,0 +1,47 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudhealth-collector
+  labels:
+    app: cloudhealth-collector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudhealth-collector
+  template:
+    metadata:
+      labels:
+        app: cloudhealth-collector
+    spec:
+      serviceAccountName: cloudhealth-collector
+      containers:
+        - name: cloudhealth-container-collector
+          image: "cloudhealth/container-collector:latest"
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: ".5"
+            limits:
+              memory: "1024Mi"
+              cpu: "1"
+          env:
+            - name: CHT_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: cloudhealth-config
+                  key: api-token
+            - name: CHT_CLUSTER_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: cloudhealth-config
+                  key: cluster-name
+            - name: CHT_INTERVAL
+              value: "900"
+            - name: CHT_JVM_MEM
+              value: "-Xmx891M"
+          args: ["upload_k8s_state", "--verbose"]

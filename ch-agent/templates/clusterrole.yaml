@@ -1,0 +1,17 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cloudhealth-collector
+  labels:
+    app: cloudhealth-collector
+rules:
+- apiGroups: [""]
+  resources:
+    - "pods"
+    - "nodes"
+    - "services"
+    - "namespaces"
+  verbs: ["get", "watch", "list"]
