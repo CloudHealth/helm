@@ -4,31 +4,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cloudhealth-collector
+  name: {{ include "ch-agent.fullname" . }}
   labels:
-    app: cloudhealth-collector
+    {{- include "ch-agent.labels" . | nindent 4 }}
 spec:
-  replicas: 1
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
   selector:
     matchLabels:
-      app: cloudhealth-collector
+      {{- include "ch-agent.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: cloudhealth-collector
+        {{- include "ch-agent.selectorLabels" . | nindent 8 }}
     spec:
-      serviceAccountName: cloudhealth-collector
+      serviceAccountName: {{ include "ch-agent.serviceAccountName" . }}
       containers:
-        - name: cloudhealth-container-collector
-          image: "cloudhealth/container-collector:latest"
-          imagePullPolicy: Always
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
-            requests:
-              memory: "512Mi"
-              cpu: ".5"
-            limits:
-              memory: "1024Mi"
-              cpu: "1"
+            {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: CHT_API_TOKEN
               valueFrom:
@@ -45,3 +42,15 @@ spec:
             - name: CHT_JVM_MEM
               value: "-Xmx891M"
           args: ["upload_k8s_state", "--verbose"]
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
