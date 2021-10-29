@@ -63,3 +63,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Role-based Access Control
+rbac:
+  # Specifies whether RBAC resources should be created
+  create: true
