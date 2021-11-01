@@ -30,18 +30,18 @@ spec:
             - name: CHT_API_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: cloudhealth-config
-                  key: api-token
+                  name: {{ include "ch-agent.secretName" . }}
+                  key: apiToken
             - name: CHT_CLUSTER_NAME
               valueFrom:
                 secretKeyRef:
-                  name: cloudhealth-config
-                  key: cluster-name
+                  name: {{ include "ch-agent.secretName" . }}
+                  key: clusterName
             - name: CHT_INTERVAL
-              value: "900"
+              value: {{ .Values.collectionInterval | quote | nindent 14 }}
             - name: CHT_JVM_MEM
-              value: "-Xmx891M"
-          args: ["upload_k8s_state", "--verbose"]
+              value: {{ .Values.jvmMemory | nindent 14 }}
+          args: ["upload_k8s_state_v2", "--verbose"]
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

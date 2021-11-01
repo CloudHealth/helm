@@ -7,6 +7,12 @@
 
 replicaCount: 1
 
+apiToken: 
+clusterName: 
+
+collectionInterval: 900
+jvmMemory: "-Xmx891M"
+
 image:
   repository: cloudhealth/container-collector
   pullPolicy: Always
@@ -16,6 +22,8 @@ image:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
+
+secretName: cloudhealth-config
 
 serviceAccount:
   # Specifies whether a service account should be created
