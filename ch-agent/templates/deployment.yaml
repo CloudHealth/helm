@@ -38,9 +38,9 @@ spec:
                   name: {{ include "ch-agent.secretName" . }}
                   key: clusterName
             - name: CHT_INTERVAL
-              value: {{ .Values.collectionInterval | quote | nindent 14 }}
+              value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
-              value: {{ .Values.jvmMemory | nindent 14 }}
+              value: {{ .Values.jvmMemory }}
           args: ["upload_k8s_state_v2", "--verbose"]
       {{- with .Values.nodeSelector }}
       nodeSelector:
