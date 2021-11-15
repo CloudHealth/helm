@@ -4,7 +4,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "ch-agent.name" -}}
+{{- define "cloudhealth-collector.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -13,7 +13,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "ch-agent.fullname" -}}
+{{- define "cloudhealth-collector.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -29,16 +29,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "ch-agent.chart" -}}
+{{- define "cloudhealth-collector.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "ch-agent.labels" -}}
-helm.sh/chart: {{ include "ch-agent.chart" . }}
-{{ include "ch-agent.selectorLabels" . }}
+{{- define "cloudhealth-collector.labels" -}}
+helm.sh/chart: {{ include "cloudhealth-collector.chart" . }}
+{{ include "cloudhealth-collector.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -48,17 +48,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "ch-agent.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "ch-agent.name" . }}
+{{- define "cloudhealth-collector.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cloudhealth-collector.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "ch-agent.serviceAccountName" -}}
+{{- define "cloudhealth-collector.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "ch-agent.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "cloudhealth-collector.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
@@ -67,6 +67,6 @@ Create the name of the service account to use
 {{/*
 Create the name of the secrets to use
 */}}
-{{- define "ch-agent.secretName" -}}
+{{- define "cloudhealth-collector.secretName" -}}
 {{- default .Values.secretName }}
 {{- end }}
