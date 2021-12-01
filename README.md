@@ -28,7 +28,7 @@ To install the chart with the release name `my-release`:
 
 ```console
 $ helm repo add cloudhealth https://github.com/CloudHealth/helm
-$ helm install my-release cloudhealth-collector
+$ helm install my-release --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth-collector
 ```
 
 These commands deploy the CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
