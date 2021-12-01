@@ -1,8 +1,10 @@
 <!-- Copyright 2021 VMware, Inc. -->
 <!-- SPDX-License-Identifier: Apache-2.0 -->
-# CloudHealth Collector Helm Chart
+# CloudHealth Kubernetes Collector Agent Helm Chart
 
-[CloudHealth](https://www.cloudhealthtech.com/) is a Cloud Management Solution. This collector pod is used to collect kubernetes resource metrics to display the Cost Distribution by resource(pods, nodes, namespaces etc.,)
+[CloudHealth](https://www.cloudhealthtech.com/) is a Cloud Management Solution. CloudHealth provides long-term, trended visibility into container resource utilization by service and team. The module helps you discover which services are consuming the most resources and identify opportunities for optimization.
+
+To use this functionality, use this helm chart to deploy the collector agent into each Kubernetes cluster in your environment.
 
 ## TL;DR
 
@@ -13,7 +15,7 @@ $ helm install my-release --set apiToken=sample_token,clusterName=test-1 cloudhe
 
 ## Introduction
 
-This chart bootstraps a CLoudHealth Collector Agent deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a CloudHealth Collector Agent deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Prerequisites
 
@@ -29,7 +31,7 @@ $ helm repo add cloudhealth https://github.com/CloudHealth/helm
 $ helm install my-release cloudhealth-collector
 ```
 
-These commands deploy CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
+These commands deploy the CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
 
@@ -52,8 +54,8 @@ $ helm delete --purge my-release
 
 | Name                     | Description                                                                             | Value           |
 | ------------------------ | --------------------------------------------------------------------------------------- | --------------- |
-| `apiToken`            | Override Kubernetes version                                                             | `<change-me>`            |
-| `clusterName`           | String to partially override common.names.fullname                                      | `your-cluster-name`            |
+| `apiToken`            | Unique Customer API Token provided by CloudHealth                                                             | `<change-me>`            |
+| `clusterName`           | Name of the cluster to be shown on the CloudHealth UI                                      | `your-cluster-name`            |
 
 
 ### Other parameters
