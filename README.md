@@ -10,7 +10,7 @@ To use this functionality, use this helm chart to deploy the collector agent int
 
 ```console
 $ helm repo add cloudhealth https://github.com/CloudHealth/helm
-$ helm install my-release --set apiToken=sample_token,clusterName=test-1 cloudhealth-collector
+$ helm install my-release --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth-collector
 ```
 
 ## Introduction
