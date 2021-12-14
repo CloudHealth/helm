@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  cloudhealth-container-collector:
+  - apiVersion: v2
+    appVersion: 2.0.175
+    created: "2021-12-14T16:43:31.9767-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 06eaaf3a0c31cf8dd801a416027c820a1d841711a70365bd1d080676c70e82ae
+    name: cloudhealth-container-collector
+    type: application
+    urls:
+    - cloudhealth-container-collector-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-12-14T16:43:31.976066-05:00"
