@@ -43,4 +43,4 @@ echo "generating updated index.yaml"
 helm repo index --merge "${INDEX_FILE}" ${BUILD_DIR}
 
 echo "Complete. new index and package files can be found under ${BUILD_DIR}"
-echo "Run: 'git checkout gh-pages && cp ${BUILD_DIR}/* .' and commit to update the helm chart"
+echo "Run: 'git checkout CloudHealth/helm && cp ${BUILD_DIR}/* .' and commit to update the helm chart"
