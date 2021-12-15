@@ -43,7 +43,7 @@ spec:
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
               value: {{ .Values.jvmMemory }}
-          args: ["upload_k8s_state_v2", "--verbose"]
+          args: {{ .Values.devArgs }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
