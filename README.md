@@ -9,7 +9,7 @@ To use this functionality, use this helm chart to deploy the collector agent int
 ## TL;DR
 
 ```console
-$ helm repo add cloudhealth https://github.com/CloudHealth/helm
+$ helm repo add cloudhealth https://raw.githubusercontent.com/CloudHealth/helm/main
 $ helm install my-release --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
@@ -27,7 +27,7 @@ This chart bootstraps a CloudHealth Collector Agent deployment on a [Kubernetes]
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm repo add cloudhealth https://github.com/CloudHealth/helm
+$ helm repo add cloudhealth https://raw.githubusercontent.com/CloudHealth/helm/main
 $ helm install my-release --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
