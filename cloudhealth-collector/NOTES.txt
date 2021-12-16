@@ -1,0 +1,14 @@
+Some commands for developers to work with:
+
+export GIT_TOKEN=<your_personal_github_token>
+helm repo add cloudhealth https://$GIT_TOKEN@raw.githubusercontent.com/CloudHealth/helm/main/
+
+
+To dry-run the helm chart:
+
+helm install my-release --debug --dry-run --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME cloudhealth/cloudhealth-collector
+
+
+To install helm for local collection dev testing:
+
+helm install my-release --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
