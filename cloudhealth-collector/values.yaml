@@ -78,4 +78,4 @@ rbac:
   create: true
 
 devArgs: |
-  ['upload_k8s_state_v2', '--verbose']
+  ['upload_k8s_state', '--verbose']
