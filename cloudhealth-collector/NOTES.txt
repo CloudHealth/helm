@@ -1,7 +1,6 @@
 Some commands for developers to work with:
 
-export GIT_TOKEN=<your_personal_github_token>
-helm repo add cloudhealth https://$GIT_TOKEN@raw.githubusercontent.com/CloudHealth/helm/main/
+helm repo add cloudhealth https://cloudhealth.github.io/helm/
 
 
 To dry-run the helm chart:

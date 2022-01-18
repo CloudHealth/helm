@@ -2,9 +2,9 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 # CloudHealth Kubernetes Collector Agent Helm Chart
 
-[CloudHealth](https://www.cloudhealthtech.com/) is a Cloud Management Solution. CloudHealth provides long-term, trended visibility into container resource utilization by service and team. The module helps you discover which services are consuming the most resources and identify opportunities for optimization.
+[CloudHealth](https://www.cloudhealthtech.com/) is a multi-cloud cost optimization solution that enables businesses to simplify cloud financial management, streamline operations, and strengthen security and compliance.
 
-To use this functionality, use this helm chart to deploy the collector agent into each Kubernetes cluster in your environment.
+To avail this functionality, use this helm chart to deploy the collector agent into each Kubernetes cluster in your environment.
 
 ## TL;DR
 
@@ -15,7 +15,7 @@ $ helm install my-release --set apiToken=<Unique Customer API Token>,clusterName
 
 ## Introduction
 
-This chart bootstraps a CloudHealth Collector Agent deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart will deploy the CloudHealth Collector for [Kubernetes](http://kubernetes.io) to your Kubernetes cluster.
 
 ## Prerequisites
 
