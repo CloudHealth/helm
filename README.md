@@ -20,7 +20,7 @@ This chart will deploy the CloudHealth Collector for [Kubernetes](http://kuberne
 ## Prerequisites
 
 - Kubernetes 1.12+
-- Helm 3.1.0
+- Helm 3.0+
 - CHT API Token
 
 ## Installing the Chart
