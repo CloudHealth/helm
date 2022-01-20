@@ -10,7 +10,7 @@ To avail this functionality, use this helm chart to deploy the collector agent i
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install my-release --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
 ## Introduction
@@ -25,11 +25,11 @@ This chart will deploy the CloudHealth Collector for [Kubernetes](http://kuberne
 
 ## Installing the Chart
 
-To install the chart with the release name `my-release`:
+To install the chart with the release name `cloudhealth-collector`:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install my-release --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
 These commands deploy the CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
@@ -38,15 +38,15 @@ These commands deploy the CloudHealth Collector on the Kubernetes cluster in the
 
 ## Uninstalling the Chart
 
-To uninstall/delete the `my-release` deployment:
+To uninstall/delete the `cloudhealth-collector` deployment:
 
 ```console
-$ helm delete my-release
+$ helm delete cloudhealth-collector
 ```
 The command removes all the Kubernetes components associated with the chart and deletes the release. Remove also the chart using `--purge` option:
 
 ```console
-$ helm delete --purge my-release
+$ helm delete --purge cloudhealth-collector
 ```
 
 ## Parameters
@@ -88,7 +88,7 @@ $ helm delete --purge my-release
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
-$ helm install my-release --set apiToken=sample_token,clusterName=mega-cluster cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=sample_token,clusterName=mega-cluster cloudhealth/cloudhealth-collector
 ```
 
 The above command sets the CloudHealth Collector apiToken to `sample_token` and sets the cluster name to `mega-cluster`.
@@ -96,7 +96,7 @@ The above command sets the CloudHealth Collector apiToken to `sample_token` and 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install my-release -f values.yaml cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector -f values.yaml cloudhealth/cloudhealth-collector
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
