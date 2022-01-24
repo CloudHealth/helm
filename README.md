@@ -99,7 +99,7 @@ Alternatively, a YAML file that specifies the values for the above parameters ca
 $ helm install cloudhealth-collector -f values.yaml cloudhealth/cloudhealth-collector
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default [values.yaml](cloudhealth-collector/values.yaml)
 
 ## Troubleshooting
 
