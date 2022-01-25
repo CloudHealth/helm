@@ -13,19 +13,19 @@ $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
 $ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
-## Introduction
+## Getting Started
 
-This chart will deploy the CloudHealth Collector for [Kubernetes](http://kubernetes.io) to your Kubernetes cluster.
+Use the helm chart to deploy the CloudHealth Collector into each [Kubernetes](http://kubernetes.io) cluster in your environment.
 
 ## Prerequisites
 
 - Kubernetes 1.12+
 - Helm 3.0+
-- CHT API Token
+- CloudHealth API Token
 
 ## Installing the Chart
 
-To install the chart with the release name `cloudhealth-collector`:
+To install the chart with the release name `cloudhealth-collector`, run the following command:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
@@ -38,7 +38,7 @@ These commands deploy the CloudHealth Collector on the Kubernetes cluster in the
 
 ## Uninstalling the Chart
 
-To uninstall/delete the `cloudhealth-collector` deployment:
+To uninstall/delete the `cloudhealth-collector` deployment, run the following command:
 
 ```console
 $ helm delete cloudhealth-collector
@@ -85,15 +85,13 @@ $ helm delete --purge cloudhealth-collector
 | `tolerations`                           | Tolerations for pod assignment                                                            | `[]`            |
 
 
-Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
+Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example, the following command sets the CloudHealth Collector API Token to `sample_token` and sets the cluster name to `mega-cluster`.
 
 ```console
 $ helm install cloudhealth-collector --set apiToken=sample_token,clusterName=mega-cluster cloudhealth/cloudhealth-collector
 ```
 
-The above command sets the CloudHealth Collector apiToken to `sample_token` and sets the cluster name to `mega-cluster`.
-
-Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
+You can also use YAML file to specify the parameters while installing the chart. For example, the following command indicates that the file `values.yaml` should be used to set the parameters:
 
 ```console
 $ helm install cloudhealth-collector -f values.yaml cloudhealth/cloudhealth-collector
@@ -107,6 +105,7 @@ Find more information about how to deal with common errors related to CloudHealt
 
 **Useful links**
 
+- https://help.cloudhealthtech.com/
 - https://docs.bitnami.com/tutorials/resolve-helm2-helm3-post-migration-issues/
 - https://helm.sh/docs/topics/v2_v3_migration/
 - https://helm.sh/blog/migrate-from-helm-v2-to-helm-v3/
