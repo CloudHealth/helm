@@ -41,7 +41,7 @@ These commands deploy the CloudHealth Collector on the Kubernetes cluster in the
 To uninstall the `cloudhealth-collector` deployment and remove the CloudHealth Helm Chart repository, run the following commands:
 
 ```console
-$ helm delete cloudhealth-collector
+$ helm uninstall cloudhealth-collector
 $ helm repo remove cloudhealth
 ```
 
