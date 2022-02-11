@@ -34,6 +34,15 @@ $ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,
 
 These commands deploy the CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
+The `apiToken` is required for `cloudhealth-collector` to work properly and should be either set explicitely as in the example above or in a secret object with the following data structure:
+```yaml
+data:
+  apiToken:  "PGNoYW5nZS1tZT4="
+  clusterName: "eW91ci1jbHVzdGVyLW5hbWU="
+```
+
+The secret name should be provided via the `secretName` parameter unless it follows the default value.
+
 > **Tip**: List all releases using `helm list`
 
 ## Uninstalling the Chart
@@ -51,7 +60,6 @@ $ helm repo remove cloudhealth
 
 | Name                     | Description                                                                             | Value           |
 | ------------------------ | --------------------------------------------------------------------------------------- | --------------- |
-| `apiToken`            | Unique Customer API Token provided by CloudHealth                                                             | `<change-me>`            |
 | `clusterName`           | Name of the cluster to be shown on the CloudHealth UI                                      | `your-cluster-name`            |
 
 
@@ -59,6 +67,7 @@ $ helm repo remove cloudhealth
 
 | Name                        | Description                                                                                  | Value                 |
 | --------------------------- | -------------------------------------------------------------------------------------------- | --------------------- |
+| `apiToken`            | Unique Customer API Token provided by CloudHealth                                                             | `<change-me>`            |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector`      |
 | `image.tag`                 | CloudHealth Collector image tag (immutable tags are recommended)                                  | `latest` |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `Always`        |
@@ -105,5 +114,3 @@ Find more information about how to deal with common errors related to CloudHealt
 - https://docs.bitnami.com/tutorials/resolve-helm2-helm3-post-migration-issues/
 - https://helm.sh/docs/topics/v2_v3_migration/
 - https://helm.sh/blog/migrate-from-helm-v2-to-helm-v3/
-
-

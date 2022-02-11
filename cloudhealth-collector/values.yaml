@@ -7,7 +7,7 @@
 
 replicaCount: 1
 
-apiToken: <change-me>
+apiToken: ""
 clusterName: your-cluster-name
 
 collectionIntervalSecs: 900
@@ -51,7 +51,7 @@ service:
   type: ClusterIP
   port: 80
 
-resources: 
+resources:
   limits:
     cpu: 1000m
     memory: 1024Mi
