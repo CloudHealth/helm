@@ -18,6 +18,10 @@ spec:
       {{- include "cloudhealth-collector.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       labels:
         {{- include "cloudhealth-collector.selectorLabels" . | nindent 8 }}
     spec:
