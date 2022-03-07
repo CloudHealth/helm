@@ -16,4 +16,4 @@ rules:
     - "nodes"
     - "services"
     - "namespaces"
-  verbs: ["get", "watch", "list"]
+  verbs: ["get"]
