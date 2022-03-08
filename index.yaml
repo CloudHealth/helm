@@ -3,9 +3,9 @@ entries:
   cloudhealth-collector:
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-03-04T14:27:30.571268-05:00"
+    created: "2022-03-08T12:19:36.194034-05:00"
     description: A Helm chart for Kubernetes
-    digest: 86f38d88d0df0578092f5adb4ab8552a9813306bb47c94d558ee3144448ff138
+    digest: 94a699b6c6dc40f74f8ece8aae470afb83882e7b00d40da9862593272d2e31e5
     home: https://cloudhealth.vmware.com/
     maintainers:
     - email: gmudumbai@vmware.com
@@ -27,7 +27,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-03-04T14:27:30.570618-05:00"
+    created: "2022-03-08T12:19:36.193342-05:00"
     description: A Helm chart for Kubernetes
     digest: 750270f07bf2c72a5ec1a9f37ebad2447dbcb2fca329a290a2343c2c8f88a8e6
     name: cloudhealth-collector
@@ -35,4 +35,4 @@ entries:
     urls:
     - cloudhealth-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-04T14:27:30.568575-05:00"
+generated: "2022-03-08T12:19:36.192525-05:00"
