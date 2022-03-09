@@ -32,11 +32,11 @@ $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
 $ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
-To install the chart with the release name `cloudhealth-collector` in a particular namespace `<test_namespace>`, run the following command:
+To install the chart with the release name `cloudhealth-collector` in a particular namespace `<target_namespace>`, run the following command:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector -n <test_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector -n <target_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
 These commands deploy the CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.

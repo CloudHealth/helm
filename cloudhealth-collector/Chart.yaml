@@ -11,13 +11,5 @@ home: https://cloudhealth.vmware.com/
 sources:
 - https://github.com/CloudHealth/helm
 maintainers:
-  - name: Govind Mudumbai
-    email: gmudumbai@vmware.com
-  - name: Katie Hooley
-    email: kschermerhor@vmware.com
-  - name: Pavan Chavva
-    email: pchavva@vmware.com
-  - name: Swetalina Behera
-    email: bswetalina@vmware.com
-  - name: Jiten Patel
-    email: pjiten@vmware.com
+  - name: CloudHealth Team
+    email: cht-core-cheapsk8s@groups.vmware.com
