@@ -23,7 +23,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "cloudhealth-collector.selectorLabels" . | nindent 8 }}
+        {{- include "cloudhealth-collector.labels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ include "cloudhealth-collector.serviceAccountName" . }}
       containers:
@@ -33,24 +33,16 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
-            {{- if .Values.secret.enabled }}
             - name: CHT_API_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "cloudhealth-collector.secret.name" . }}
+                  name: {{ include "cloudhealth-collector.secretName" . }}
                   key: apiToken
             - name: CHT_CLUSTER_NAME
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "cloudhealth-collector.secret.name" . }}
+                  name: {{ include "cloudhealth-collector.secretName" . }}
                   key: clusterName
-            {{- end }}
-            {{- if not .Values.secret.enabled }}
-            - name: CHT_API_TOKEN
-              value: {{ .Values.apiToken | quote }}
-            - name: CHT_CLUSTER_NAME
-              value: {{ .Values.clusterName | quote }}
-            {{- end }}
             - name: CHT_INTERVAL
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM

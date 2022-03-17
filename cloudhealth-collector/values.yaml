@@ -23,9 +23,7 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-secret:
-  enabled: true
-  name: cloudhealth-config
+secretName: cloudhealth-config
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -35,6 +33,9 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
+
+# Additional labels to add to all resources created by this chart
+additionalLabels: {}
 
 podAnnotations: {}
 

@@ -42,6 +42,9 @@ helm.sh/chart: {{ include "cloudhealth-collector.chart" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
+{{- if .Values.additionalLabels }}
+{{ toYaml .Values.additionalLabels }}
+{{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
@@ -67,6 +70,6 @@ Create the name of the service account to use
 {{/*
 Create the name of the secrets to use
 */}}
-{{- define "cloudhealth-collector.secret.name" -}}
-{{- default .Values.secret.name }}
+{{- define "cloudhealth-collector.secretName" -}}
+{{- default .Values.secretName }}
 {{- end }}
