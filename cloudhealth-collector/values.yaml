@@ -23,7 +23,9 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-secretName: cloudhealth-config
+secret:
+  enabled: true
+  name: cloudhealth-config
 
 serviceAccount:
   # Specifies whether a service account should be created

@@ -33,16 +33,24 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
+            {{- if .Values.secret.enabled }}
             - name: CHT_API_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "cloudhealth-collector.secretName" . }}
+                  name: {{ include "cloudhealth-collector.secret.name" . }}
                   key: apiToken
             - name: CHT_CLUSTER_NAME
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "cloudhealth-collector.secretName" . }}
+                  name: {{ include "cloudhealth-collector.secret.name" . }}
                   key: clusterName
+            {{- end }}
+            {{- if not .Values.secret.enabled }}
+            - name: CHT_API_TOKEN
+              value: {{ .Values.apiToken | quote }}
+            - name: CHT_CLUSTER_NAME
+              value: {{ .Values.clusterName | quote }}
+            {{- end }}
             - name: CHT_INTERVAL
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM

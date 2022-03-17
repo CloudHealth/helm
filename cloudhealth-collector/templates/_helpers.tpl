@@ -67,6 +67,6 @@ Create the name of the service account to use
 {{/*
 Create the name of the secrets to use
 */}}
-{{- define "cloudhealth-collector.secretName" -}}
-{{- default .Values.secretName }}
+{{- define "cloudhealth-collector.secret.name" -}}
+{{- default .Values.secret.name }}
 {{- end }}
