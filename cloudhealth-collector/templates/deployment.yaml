@@ -39,10 +39,7 @@ spec:
                   name: {{ include "cloudhealth-collector.secretName" . }}
                   key: apiToken
             - name: CHT_CLUSTER_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "cloudhealth-collector.secretName" . }}
-                  key: clusterName
+              value: {{ required "A valid clusterName required!" .Values.clusterName | b64enc | quote }}
             - name: CHT_INTERVAL
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
