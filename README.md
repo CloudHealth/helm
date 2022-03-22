@@ -64,13 +64,14 @@ $ helm repo remove cloudhealth
 
 | Name                     | Description                                                                             | Value           |
 | ------------------------ | --------------------------------------------------------------------------------------- | --------------- |
-| `clusterName`            | Name of the cluster to be shown on the CloudHealth UI                                   |             |
+| `clusterName`            | Name of the cluster to be shown on the CloudHealth UI                                   |    `""`         |
 
 
 ### Other parameters
 
 | Name                        | Description                                                                                  | Value                 |
 | --------------------------- | -------------------------------------------------------------------------------------------- | --------------------- |
+| `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""` |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector`      |
 | `image.tag`                 | CloudHealth Collector image tag (immutable tags are recommended)                                  | `latest` |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `Always`        |
