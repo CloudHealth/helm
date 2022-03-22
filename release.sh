@@ -19,12 +19,8 @@ if [[ -z helm_path ]] ; then
 fi
 
 # initialize build variables
-BUILD_DIR="./_build"
+BUILD_DIR="."
 INDEX_FILE=${BUILD_DIR}/index.yaml
-
-rm -rf ${BUILD_DIR}
-echo "using build directory: ${BUILD_DIR}"
-mkdir ${BUILD_DIR}
 
 # create new tgz
 echo "creating new ${CHART_NAME} helm package"
@@ -34,10 +30,6 @@ if [[ "$?" -ne "0" ]] ; then
     echo "Failure: error creating helm package"
     exit 1
 fi
-
-# download current index.yaml
-echo "downloading latest index.yaml to ${INDEX_FILE}"
-curl -sL https://raw.githubusercontent.com/CloudHealth/helm/main/index.yaml > ${INDEX_FILE}
 
 echo "generating updated index.yaml"
 helm repo index --merge "${INDEX_FILE}" ${BUILD_DIR}
