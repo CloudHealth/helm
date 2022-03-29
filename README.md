@@ -39,6 +39,12 @@ $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
 $ helm install cloudhealth-collector -n <target_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
+The `apiToken` is required for `cloudhealth-collector` to work and should be either set while running helm install command as in the example above or in a secret object with the following data structure:
+```yaml
+data:
+  apiToken:  "PGNoYW5nZS1tZT4="
+```
+
 These commands deploy the CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
@@ -58,14 +64,14 @@ $ helm repo remove cloudhealth
 
 | Name                     | Description                                                                             | Value           |
 | ------------------------ | --------------------------------------------------------------------------------------- | --------------- |
-| `apiToken`            | Unique Customer API Token provided by CloudHealth                                                             | `<change-me>`            |
-| `clusterName`           | Name of the cluster to be shown on the CloudHealth UI                                      | `your-cluster-name`            |
+| `clusterName`            | Name of the cluster to be shown on the CloudHealth UI                                   |    `""`         |
 
 
 ### Other parameters
 
 | Name                        | Description                                                                                  | Value                 |
 | --------------------------- | -------------------------------------------------------------------------------------------- | --------------------- |
+| `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""` |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector`      |
 | `image.tag`                 | CloudHealth Collector image tag (immutable tags are recommended)                                  | `latest` |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `Always`        |

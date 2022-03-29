@@ -7,8 +7,8 @@
 
 replicaCount: 1
 
-apiToken: <change-me>
-clusterName: your-cluster-name
+apiToken: ""
+clusterName: ""
 
 collectionIntervalSecs: 900
 jvmMemory: "-Xmx891M"
