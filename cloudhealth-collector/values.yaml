@@ -11,6 +11,7 @@ apiToken: ""
 clusterName: ""
 
 collectionIntervalSecs: 900
+customLabels: {}
 jvmMemory: "-Xmx891M"
 
 image:
