@@ -42,8 +42,8 @@ helm.sh/chart: {{ include "cloudhealth-collector.chart" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
-{{- if .Values.additionalLabels }}
-{{ toYaml .Values.additionalLabels }}
+{{- if .Values.customLabels }}
+{{ toYaml .Values.customLabels }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}

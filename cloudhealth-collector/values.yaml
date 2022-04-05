@@ -35,7 +35,7 @@ serviceAccount:
   name: ""
 
 # Additional labels to add to all resources created by this chart
-additionalLabels: {}
+customLabels: {}
 
 podAnnotations: {}
 

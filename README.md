@@ -92,7 +92,7 @@ $ helm repo remove cloudhealth
 | `affinity`                              | Affinity for pod assignment                                                               | `{}`            |
 | `nodeSelector`                          | Node labels for pod assignment                                                            | `{}`            |
 | `tolerations`                           | Tolerations for pod assignment                                                            | `[]`            |
-| `additionalLabels`                          | Additional labels to add to all resources created by this chart                                                            | `{}`            |
+| `customLabels`                          | Additional labels to add to all resources created by this chart                                                            | `{}`            |
 
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example, the following command sets the CloudHealth Collector API Token to `sample_token` and sets the cluster name to `mega-cluster`.
