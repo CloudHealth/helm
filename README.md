@@ -32,6 +32,11 @@ $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
 $ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
+`BETA` To allow the collector agent to also collect namespace resources, run the above command with following `devArgs` set:
+```console
+$ helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\]" cloudhealth/cloudhealth-collector
+```
+
 To install the chart with the release name `cloudhealth-collector` in a particular namespace `<target_namespace>`, run the following command:
 
 ```console
