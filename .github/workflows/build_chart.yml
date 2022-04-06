@@ -30,7 +30,7 @@ jobs:
           chmod +x "${GITHUB_WORKSPACE}/.github/release.sh"
 
           # run script
-          "${GITHUB_WORKSPACE}/.github/release.sh"
+          "${GITHUB_WORKSPACE}/.github/release.sh ${GITHUB_WORKSPACE}/cloudhealth-collector"
       - name: Commit new chart & index
         run: |
           git config --global user.name 'CloudHealth Team'
