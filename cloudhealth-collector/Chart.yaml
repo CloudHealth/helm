@@ -3,7 +3,7 @@
 
 apiVersion: v2
 name: cloudhealth-collector
-description: A Helm chart for Kubernetes
+description: A Helm chart for CloudHealth's Kubernetes Collector Agent
 type: application
 version: 1.0.4
 appVersion: "2.0.175"
