@@ -3,7 +3,7 @@ entries:
   cloudhealth-collector:
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-04-05T19:57:29.895034Z"
+    created: "2022-04-10T15:49:49.65631Z"
     description: A Helm chart for Kubernetes
     digest: b3c4ceb0a235636909e9bc8305c1b46dd3901b18beecf70bd2fdf5c9f5469a6c
     home: https://cloudhealth.vmware.com/
@@ -19,7 +19,39 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-04-05T19:57:29.894506Z"
+    created: "2022-04-10T15:49:49.655682Z"
+    description: A Helm chart for Kubernetes
+    digest: fd59848515eead48db06bbeb725dba78e14ef112c5e0f2011f62254ebb27f23e
+    home: https://cloudhealth.vmware.com/
+    maintainers:
+    - email: cht-core-containers@groups.vmware.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - cloudhealth-collector-1.0.3-namespace-beta.tgz
+    version: 1.0.3-namespace-beta
+  - apiVersion: v2
+    appVersion: 2.0.175
+    created: "2022-04-08T19:57:36.239817Z"
+    description: A Helm chart for Kubernetes
+    digest: 2c9b12fd662d92a73198260c94337525ab602662fd59ceec0c01ebb1f367601f
+    home: https://cloudhealth.vmware.com/
+    maintainers:
+    - email: cht-core-containers@groups.vmware.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - cloudhealth-collector-1.0.3-namesace-beta.tgz
+    version: 1.0.3-namesace-beta
+  - apiVersion: v2
+    appVersion: 2.0.175
+    created: "2022-04-10T15:49:49.654497Z"
     description: A Helm chart for Kubernetes
     digest: 1ee9ae57fc83364c77880e2009abb6d9c7ec909c18149758fa47a580ab9299e8
     home: https://cloudhealth.vmware.com/
@@ -35,23 +67,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-04-05T19:57:29.895651Z"
-    description: A Helm chart for Kubernetes
-    digest: 1ee9ae57fc83364c77880e2009abb6d9c7ec909c18149758fa47a580ab9299e8
-    home: https://cloudhealth.vmware.com/
-    maintainers:
-    - email: cht-core-containers@groups.vmware.com
-      name: CloudHealth Team
-    name: cloudhealth-collector
-    sources:
-    - https://github.com/CloudHealth/helm
-    type: application
-    urls:
-    - _build/cloudhealth-collector-1.0.2.tgz
-    version: 1.0.2
-  - apiVersion: v2
-    appVersion: 2.0.175
-    created: "2022-04-05T19:57:29.893925Z"
+    created: "2022-04-10T15:49:49.653889Z"
     description: A Helm chart for Kubernetes
     digest: d2556ad0970e1a2862800f69d06cb683f63391bb089ee8c1b8f720187a9d11f0
     home: https://cloudhealth.vmware.com/
@@ -67,7 +83,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-04-05T19:57:29.893404Z"
+    created: "2022-04-10T15:49:49.653162Z"
     description: A Helm chart for Kubernetes
     digest: 750270f07bf2c72a5ec1a9f37ebad2447dbcb2fca329a290a2343c2c8f88a8e6
     name: cloudhealth-collector
@@ -75,4 +91,4 @@ entries:
     urls:
     - cloudhealth-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-05T19:57:29.892743Z"
+generated: "2022-04-10T15:49:49.652456Z"
