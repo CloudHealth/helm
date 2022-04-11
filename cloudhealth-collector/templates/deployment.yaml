@@ -25,12 +25,6 @@ spec:
       labels:
         {{- include "cloudhealth-collector.selectorLabels" . | nindent 8 }}
     spec:
-    {{- if .Values.imagePullSecrets }}
-      imagePullSecrets:
-      {{- range .Values.imagePullSecrets }}
-        - name: {{ . }}
-      {{- end }}
-    {{- end }}
       serviceAccountName: {{ include "cloudhealth-collector.serviceAccountName" . }}
       containers:
         - name: {{ .Chart.Name }}
