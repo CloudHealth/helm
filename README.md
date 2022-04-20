@@ -49,6 +49,13 @@ These commands deploy the CloudHealth Collector on the Kubernetes cluster in the
 
 > **Tip**: List all releases using `helm list`
 
+## Updating the Chart
+
+To update an existing release to the latest version of the chart, run the following command:
+```
+$ helm upgrade cloudhealth-collector cloudhealth/cloudhealth-collector
+```
+
 ## Uninstalling the Chart
 
 To uninstall the `cloudhealth-collector` deployment and remove the CloudHealth Helm Chart repository, run the following commands:
