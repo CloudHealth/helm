@@ -39,11 +39,6 @@ $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
 $ helm install cloudhealth-collector -n <target_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
 ```
 
-`BETA` To allow the collector agent to also collect namespace resources, add the following `devArgs` when running the above `install` command:
-```console
---set devArgs="\['upload_k8s_state_v2'\,'--verbose'\]"
-```
-
 The `apiToken` is required for `cloudhealth-collector` to work and should be either set while running helm install command as in the example above or in a secret object with the following data structure:
 ```yaml
 data:
@@ -53,6 +48,13 @@ data:
 These commands deploy the CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
+
+## Updating the Chart
+
+To update an existing release to the latest version of the chart, run the following command:
+```
+$ helm upgrade cloudhealth-collector cloudhealth/cloudhealth-collector
+```
 
 ## Uninstalling the Chart
 
