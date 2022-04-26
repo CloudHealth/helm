@@ -15,7 +15,7 @@ entries:
     - https://github.com/CloudHealth/helm
     type: application
     urls:
-    - cloudhealth-collector-1.1.0.tgz
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v2
     appVersion: 2.0.175
@@ -31,7 +31,7 @@ entries:
     - https://github.com/CloudHealth/helm
     type: application
     urls:
-    - cloudhealth-collector-1.0.5.tgz
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-1.0.5.tgz
     version: 1.0.5
   - apiVersion: v2
     appVersion: 2.0.175
@@ -47,7 +47,7 @@ entries:
     - https://github.com/CloudHealth/helm
     type: application
     urls:
-    - cloudhealth-collector-1.0.4.tgz
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-1.0.4.tgz
     version: 1.0.4
   - apiVersion: v2
     appVersion: 2.0.175
@@ -63,7 +63,7 @@ entries:
     - https://github.com/CloudHealth/helm
     type: application
     urls:
-    - cloudhealth-collector-1.0.3.tgz
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-1.0.3.tgz
     version: 1.0.3
   - apiVersion: v2
     appVersion: 2.0.175
@@ -79,7 +79,7 @@ entries:
     - https://github.com/CloudHealth/helm
     type: application
     urls:
-    - cloudhealth-collector-1.0.2.tgz
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-1.0.2.tgz
     version: 1.0.2
   - apiVersion: v2
     appVersion: 2.0.175
@@ -95,7 +95,7 @@ entries:
     - https://github.com/CloudHealth/helm
     type: application
     urls:
-    - cloudhealth-collector-1.0.1.tgz
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v2
     appVersion: 2.0.175
@@ -105,6 +105,6 @@ entries:
     name: cloudhealth-collector
     type: application
     urls:
-    - cloudhealth-collector-0.1.0.tgz
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-0.1.0.tgz
     version: 0.1.0
 generated: "2022-04-20T18:44:44.56678Z"
