@@ -13,3 +13,8 @@ To install helm for local collection dev testing:
 helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
 
 helm upgrade cloudhealth-collector -n dmz --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\]" cloudhealth/cloudhealth-collector
+
+helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,image.repository=cloudhealth/container-collector-dev cloudhealth/cloudhealth-collector
+
+
+helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,image.repository=latest-libs,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
