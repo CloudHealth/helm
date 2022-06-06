@@ -19,6 +19,7 @@ if [[ -z helm_path ]] ; then
 fi
 
 # initialize build variables
+BUILD_URL="https://cloudhealth.github.io/helm/"
 BUILD_DIR="."
 INDEX_FILE=${BUILD_DIR}/index.yaml
 
@@ -32,7 +33,7 @@ if [[ "$?" -ne "0" ]] ; then
 fi
 
 echo "generating updated index.yaml"
-helm repo index --merge "${INDEX_FILE}" ${BUILD_DIR}
+helm repo index --merge "${INDEX_FILE}" ${BUILD_DIR} --url ${BUILD_URL}
 
 echo "Complete. new index and package files can be found under ${BUILD_DIR}"
 echo "Run: 'git checkout CloudHealth/helm && cp ${BUILD_DIR}/* .' and commit to update the helm chart"
