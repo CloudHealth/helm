@@ -44,6 +44,7 @@ spec:
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
               value: {{ .Values.jvmMemory }}
+            {{- toYaml .Values.customEnvVars | nindent 12 }}
           args: {{ .Values.devArgs }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
