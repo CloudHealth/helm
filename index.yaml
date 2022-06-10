@@ -2,8 +2,24 @@ apiVersion: v1
 entries:
   cloudhealth-collector:
   - apiVersion: v2
+    appVersion: 3.0.2
+    created: "2022-06-10T17:10:12.37492-04:00"
+    description: A Helm chart for CloudHealth's Kubernetes Collector Agent
+    digest: e137495fc955def1bcf98783826584a3fb388e117509160aff0d09949d89e2ad
+    home: https://cloudhealth.vmware.com/
+    maintainers:
+    - email: cht-core-containers@groups.vmware.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-2.0.1-alpha.tgz
+    version: 2.0.1-alpha
+  - apiVersion: v2
     appVersion: 3.0.1
-    created: "2022-06-08T11:38:53.17681-04:00"
+    created: "2022-06-10T17:10:12.372843-04:00"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 222dba009a23b7e4043c75643111ff0bcef3266dd6ab45cb9f4f331b4b0fd819
     home: https://cloudhealth.vmware.com/
@@ -19,7 +35,7 @@ entries:
     version: 2.0.0-alpha
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-09T15:17:30.269023-04:00"
+    created: "2022-06-10T17:10:12.372043-04:00"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 2cec4cd7b3a2e286de11fb4a702db129606fe2082119ddd4303306168f126a55
     home: https://cloudhealth.vmware.com/
@@ -35,7 +51,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-09T15:17:30.268449-04:00"
+    created: "2022-06-10T17:10:12.371248-04:00"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: aeda91ce581f51203a12907414aa7c907c108a8705374e49592fde513ab645da
     home: https://cloudhealth.vmware.com/
@@ -51,7 +67,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-08T11:38:53.175637-04:00"
+    created: "2022-06-10T17:10:12.370357-04:00"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 9824ef7665f63697e07fe2ca603c9ee0f998c509e9e3a39f1d34ef8d6c76c0c0
     home: https://cloudhealth.vmware.com/
@@ -67,7 +83,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-08T11:38:53.174944-04:00"
+    created: "2022-06-10T17:10:12.369629-04:00"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 5932bd28e3f3d07f1a2ba6ee8d3846d4e361cda572a9b9130dae5b059a68faf6
     home: https://cloudhealth.vmware.com/
@@ -83,7 +99,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-08T11:38:53.174312-04:00"
+    created: "2022-06-10T17:10:12.368905-04:00"
     description: A Helm chart for Kubernetes
     digest: b3c4ceb0a235636909e9bc8305c1b46dd3901b18beecf70bd2fdf5c9f5469a6c
     home: https://cloudhealth.vmware.com/
@@ -99,7 +115,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-08T11:38:53.173445-04:00"
+    created: "2022-06-10T17:10:12.36819-04:00"
     description: A Helm chart for Kubernetes
     digest: 1ee9ae57fc83364c77880e2009abb6d9c7ec909c18149758fa47a580ab9299e8
     home: https://cloudhealth.vmware.com/
@@ -115,7 +131,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-08T11:38:53.172606-04:00"
+    created: "2022-06-10T17:10:12.366912-04:00"
     description: A Helm chart for Kubernetes
     digest: d2556ad0970e1a2862800f69d06cb683f63391bb089ee8c1b8f720187a9d11f0
     home: https://cloudhealth.vmware.com/
@@ -131,7 +147,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-08T11:38:53.171749-04:00"
+    created: "2022-06-10T17:10:12.365759-04:00"
     description: A Helm chart for Kubernetes
     digest: 750270f07bf2c72a5ec1a9f37ebad2447dbcb2fca329a290a2343c2c8f88a8e6
     name: cloudhealth-collector
@@ -139,4 +155,4 @@ entries:
     urls:
     - https://cloudhealth.github.io/helm/cloudhealth-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-08T11:38:53.170703-04:00"
+generated: "2022-06-10T17:10:12.363738-04:00"
