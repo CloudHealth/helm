@@ -95,7 +95,7 @@ $ helm repo remove cloudhealth
 | `service.port`                  | CloudHealth Collector UI Service Type                                                                                                 | `80`              |
 | `podAnnotations`                        | Additional pod annotations                                                                | `{}`            |
 | `podSecurityContext`            | Enable security context for CloudHealth Collector pods                                         | `{}`          |
-| `securityContext`            | Enable security context for CloudHealth Collector                                         | `{}`          |
+| `containerSecurityContext`            | Enable security context for CloudHealth Collector                                         | `{}`          |
 | `affinity`                              | Affinity for pod assignment                                                               | `{}`            |
 | `nodeSelector`                          | Node labels for pod assignment                                                            | `{}`            |
 | `tolerations`                           | Tolerations for pod assignment                                                            | `[]`            |

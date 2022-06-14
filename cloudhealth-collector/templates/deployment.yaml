@@ -26,12 +26,23 @@ spec:
         {{- include "cloudhealth-collector.labels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ include "cloudhealth-collector.serviceAccountName" . }}
+      {{- with .Values.podSecurityContext }} 
+      securityContext: {{- toYaml . | nindent 8 }} 
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- with .Values.containerSecurityContext }} 
+          securityContext: {{- toYaml . | nindent 12 }} 
+          {{- end }}
+          {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }} 
+          volumeMounts: 
+            - mountPath: /tmp 
+              name: tmpfs 
+          {{- end }}
           env:
             - name: CHT_API_TOKEN
               valueFrom:
@@ -56,4 +67,9 @@ spec:
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }} 
+      volumes: 
+        - name: tmpfs 
+          emptyDir: {} 
       {{- end }}
