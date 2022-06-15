@@ -2,6 +2,10 @@
 
 All notable changes for each upgraded tag of the CloudHealth Container Collector image.  Found on DockerHub: https://hub.docker.com/r/cloudhealth/container-collector
 
+## [1178] - 2022-06-15
+### Added
+* Support for clusters running Kubernetes versions 1.22 and 1.23
+
 ## [1173] - 2022-05-19
 ### Security
 * Libraries Upgraded
