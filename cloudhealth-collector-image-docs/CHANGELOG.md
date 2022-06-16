@@ -4,7 +4,7 @@ All notable changes for each upgraded tag of the CloudHealth Container Collector
 
 ## [1178] - 2022-06-15
 ### Added
-* Support for clusters running Kubernetes versions 1.22 and 1.23
+* Functionality added to refresh the service account token periodically to prevent the use of expired tokens. 
 
 ## [1173] - 2022-05-19
 ### Security
