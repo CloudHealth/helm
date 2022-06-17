@@ -11,7 +11,7 @@ metadata:
     {{- include "cloudhealth-collector.labels" . | nindent 4 }}
 rules:
 - apiGroups: [""]
-  resources: ["pods", "nodes", "namespaces", "resourcequotas", "limitranges"]
+  resources: ["pods", "nodes", "namespaces", "services", "resourcequotas", "limitranges"]
   verbs: ["get", "list"]
 - apiGroups: ["metrics.k8s.io"]
   resources: ["pods", "nodes"]

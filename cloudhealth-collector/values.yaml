@@ -42,7 +42,7 @@ podAnnotations: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext: {}
+containerSecurityContext: {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -82,3 +82,7 @@ rbac:
 
 devArgs: |
   ['upload_k8s_state_v3', '--verbose']
+
+customEnvVars: []
+# - name: JAVA_OPTS
+#   value: JAVA_OPTS -Dhttp.proxyHost=xx -Dhttp.proxyPort=xx -Dhttp.nonProxyHosts="xx" -Dhttps.proxyHost=xx -Dhttps.proxyPort=xx -Dhttps.nonProxyHosts="xx"
