@@ -82,3 +82,7 @@ rbac:
 
 devArgs: |
   ['upload_k8s_state_v2', '--verbose']
+
+customEnvVars: []
+# - name: JAVA_OPTS
+#   value: JAVA_OPTS -Dhttp.proxyHost=xx -Dhttp.proxyPort=xx -Dhttp.nonProxyHosts="xx" -Dhttps.proxyHost=xx -Dhttps.proxyPort=xx -Dhttps.nonProxyHosts="xx"

@@ -55,6 +55,10 @@ spec:
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
               value: {{ .Values.jvmMemory }}
+            {{- range .Values.customEnvVars}}
+            - name: {{ .name }}
+              value: {{ .value }}
+            {{- end }}
           args: {{ .Values.devArgs }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
