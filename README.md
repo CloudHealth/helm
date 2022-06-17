@@ -76,36 +76,42 @@ $ helm repo remove cloudhealth
 
 ### Other parameters
 
-| Name                        | Description                                                                                  | Value                 |
-| --------------------------- | -------------------------------------------------------------------------------------------- | --------------------- |
+| Name                        | Description                                                                                       | Value                 |
+| --------------------------- | ------------------------------------------------------------------------------------------------- | --------------------- |
 | `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""` |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector`      |
 | `image.tag`                 | CloudHealth Collector image tag (immutable tags are recommended)                                  | `latest` |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `Always`        |
 | `image.pullSecrets`         | CloudHealth Collector image pull secrets                                                          | `[]`                  |
-| `replicaCount`                          | Number of CloudHealth Collector replicas to deploy                                             | `1`|
-| `resources.limits.cpu`                      | The CPU limits for CloudHealth Collector containers                                      | `1000m`            |
-| `resources.requests.cpu`                    | The requested CPU for CloudHealth Collector containers                                   | `500m`            |
-| `resources.limits.memory`                      | The Memory limits for CloudHealth Collector containers                                      | `1024Mi`            |
-| `resources.requests.memory`                    | The requested Memory for CloudHealth Collector containers                                   | `512Mi`            |
-| `nameOverride`       | String to override common.names.fullname                                          | `""`            |
-| `fullnameOverride`       | String to fully override common.names.fullname                                          | `""`            |
-| `secretName`       | Kubernetes secret name created to store CloudHealth API Token & Secret                                         | `cloudhealth-config`            |
-| `service.type`                  | CloudHealth Collector UI Service Type                                                                                                 | `ClusterIP`              |
-| `service.port`                  | CloudHealth Collector UI Service Type                                                                                                 | `80`              |
-| `podAnnotations`                        | Additional pod annotations                                                                | `{}`            |
-| `podSecurityContext`            | Enable security context for CloudHealth Collector pods                                         | `{}`          |
-| `securityContext`            | Enable security context for CloudHealth Collector                                         | `{}`          |
-| `affinity`                              | Affinity for pod assignment                                                               | `{}`            |
-| `nodeSelector`                          | Node labels for pod assignment                                                            | `{}`            |
-| `tolerations`                           | Tolerations for pod assignment                                                            | `[]`            |
-| `customLabels`                          | Custom labels to add to all resources created by this chart                                                            | `{}`            |
+| `replicaCount`              | Number of CloudHealth Collector replicas to deploy                                                | `1`|
+| `resources.limits.cpu`      | The CPU limits for CloudHealth Collector containers                                               | `1000m`            |
+| `resources.requests.cpu`    | The requested CPU for CloudHealth Collector containers                                            | `500m`            |
+| `resources.limits.memory`   | The Memory limits for CloudHealth Collector containers                                            | `1024Mi`            |
+| `resources.requests.memory` | The requested Memory for CloudHealth Collector containers                                         | `512Mi`            |
+| `nameOverride`              | String to override common.names.fullname                                                          | `""`            |
+| `fullnameOverride`          | String to fully override common.names.fullname                                                    | `""`            |
+| `secretName`                | Kubernetes secret name created to store CloudHealth API Token & Secret                            | `cloudhealth-config`            |
+| `service.type`              | CloudHealth Collector UI Service Type                                                             | `ClusterIP`              |
+| `service.port`              | CloudHealth Collector UI Service Type                                                             | `80`              |
+| `podAnnotations`            | Additional pod annotations                                                                        | `{}`            |
+| `podSecurityContext`        | Enable security context for CloudHealth Collector pods                                            | `{}`          |
+| `securityContext`           | Enable security context for CloudHealth Collector                                                 | `{}`          |
+| `affinity`                  | Affinity for pod assignment                                                                       | `{}`            |
+| `nodeSelector`              | Node labels for pod assignment                                                                    | `{}`            |
+| `tolerations`               | Tolerations for pod assignment                                                                    | `[]`            |
+| `customLabels`              | Custom labels to add to all resources created by this chart                                       | `{}`            |
+| `customEnvVars`             | Extra environment variable to add to pod created by this chart (has to be a `name`, `value` pair) | `[]`            |
 
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example, the following command sets the CloudHealth Collector API Token to `sample_token` and sets the cluster name to `mega-cluster`.
 
 ```console
 $ helm install cloudhealth-collector --set apiToken=sample_token,clusterName=mega-cluster cloudhealth/cloudhealth-collector
+```
+
+Example with `customEnvVars`
+```console
+$ helm install cloudhealth-collector --set apiToken=sample_token,clusterName=mega-cluster --set "customEnvVars[0].name=ENV4" --set "customEnvVars[0].value=VALUE4" cloudhealth/cloudhealth-collector
 ```
 
 You can also use YAML file to specify the parameters while installing the chart. For example, the following command indicates that the file `values.yaml` should be used to set the parameters:

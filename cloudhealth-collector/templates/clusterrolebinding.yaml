@@ -12,7 +12,7 @@ metadata:
     {{- include "cloudhealth-collector.labels" . | nindent 4 }}
 subjects:
 - kind: ServiceAccount
-  name: {{ include "cloudhealth-collector.fullname" . }}
+  name: {{ include "cloudhealth-collector.serviceAccountName" . }}
   namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
