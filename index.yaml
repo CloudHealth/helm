@@ -67,7 +67,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-06-17T10:24:59.592745-04:00"
+    created: "2022-06-17T10:24:59.592745-04:00"=
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 9824ef7665f63697e07fe2ca603c9ee0f998c509e9e3a39f1d34ef8d6c76c0c0
     home: https://cloudhealth.vmware.com/

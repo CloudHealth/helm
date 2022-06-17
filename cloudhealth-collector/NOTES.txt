@@ -18,6 +18,7 @@ helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CH
 
 
 helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,image.repository=latest-libs,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
+
 helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,image.repository=metrics-collector-1,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
 helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,image.repository=latest-libs-1,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
 
