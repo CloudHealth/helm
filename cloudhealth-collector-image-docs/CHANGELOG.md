@@ -8,6 +8,11 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+## [1191] - 2022-07-25
+### Added
+* Error handling added to provide better debug logging while retrieving data from Kubernetes API
+* Separate metrics cache initialized in preparation for collecting usage data in the future
+
 ## [1183] - 2022-07-12
 ### Security
 * JRuby removed from final image
