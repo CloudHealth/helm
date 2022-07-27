@@ -10,8 +10,16 @@ The agent has been verified against:
 
 ## [1191] - 2022-07-25
 ### Added
+* Functionality to collect additional resources from the Kubernetes API including:
+    * ResourceQuotas
+    * LimitRanges
+    * Deployments
+    * ReplicaSets
+    * StatefulSets
+    * DaemonSets
+    * CronJobs
+* Functionality to collect pod metrics from Kubernetes metrics-server
 * Error handling added to provide better debug logging while retrieving data from Kubernetes API
-* Separate metrics cache initialized in preparation for collecting usage data in the future
 
 ## [1183] - 2022-07-12
 ### Security
