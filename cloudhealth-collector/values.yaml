@@ -62,6 +62,11 @@ resources:
     cpu: 500m
     memory: 512Mi
 
+liveness:
+  initialDelaySeconds: 300
+  failureThreshold: 3
+  periodSeconds: 300
+
 autoscaling:
   enabled: false
   minReplicas: 1
@@ -81,7 +86,7 @@ rbac:
   create: true
 
 devArgs: |
-  ['upload_k8s_state_v3', '--verbose']
+  ['upload_k8s_state_v4', '--verbose']
 
 customEnvVars: []
 # - name: JAVA_OPTS

@@ -35,10 +35,19 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          livenessProbe:
+            exec:
+              command:
+                - /bin/bash
+                - -c
+                - find /tmp -type f -mmin -40| grep liveness.txt
+            initialDelaySeconds: {{ .Values.liveness.initialDelaySeconds }}
+            failureThreshold: {{ .Values.liveness.failureThreshold }}
+            periodSeconds: {{ .Values.liveness.periodSeconds }}
           {{- with .Values.containerSecurityContext }} 
           securityContext: {{- toYaml . | nindent 12 }} 
           {{- end }}
-          {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }} 
+          {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }}
           volumeMounts: 
             - mountPath: /tmp 
               name: tmpfs 
