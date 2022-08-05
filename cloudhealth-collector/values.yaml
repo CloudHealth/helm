@@ -86,7 +86,7 @@ rbac:
   create: true
 
 devArgs: |
-  ['upload_k8s_state_v4', '--verbose']
+  ['upload_k8s_state_v3', '--verbose']
 
 customEnvVars: []
 # - name: JAVA_OPTS
