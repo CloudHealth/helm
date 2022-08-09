@@ -10,7 +10,7 @@ The agent has been verified against:
 
 ## [1201] - 2022-08-09
 ### Removed
-* Removed errors requests
+* Removed triggering requests to errors endpoint
 
 ## [1191] - 2022-07-25
 ### Added
