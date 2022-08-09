@@ -65,7 +65,7 @@ resources:
 liveness:
   initialDelaySeconds: 300
   failureThreshold: 3
-  periodSeconds: 2400
+  periodSeconds: 300
 
 autoscaling:
   enabled: false
