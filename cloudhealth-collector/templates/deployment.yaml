@@ -40,7 +40,7 @@ spec:
               command:
                 - /bin/bash
                 - -c
-                - find /tmp -type f -mmin -40| grep liveness.txt
+                - find /tmp -type f -mmin -40 | grep liveness.txt
             initialDelaySeconds: {{ .Values.liveness.initialDelaySeconds }}
             failureThreshold: {{ .Values.liveness.failureThreshold }}
             periodSeconds: {{ .Values.liveness.periodSeconds }}
