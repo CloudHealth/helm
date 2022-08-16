@@ -8,6 +8,10 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+## [1201] - 2022-08-09
+### Removed
+* Removed triggering requests to errors endpoint
+
 ## [1191] - 2022-07-25
 ### Added
 * Functionality to collect additional resources from the Kubernetes API including:
