@@ -8,6 +8,12 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+## [1203] - 2022-08-10
+### Added
+* Liveness Check for collector pod
+  * Added a new file liveness.txt in collector pod /tmp folder. Every time collection is performed for any resource, the
+    file's access date timestamp is updated.
+
 ## [1201] - 2022-08-09
 ### Removed
 * Removed triggering requests to errors endpoint
