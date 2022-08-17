@@ -11,7 +11,7 @@ The agent has been verified against:
 ## [1203] - 2022-08-10
 ### Added
 * Liveness Check for collector pod
-  * Added a new file liveness.txt in collector pod /tmp folder.Every time collection is performed for any resource, the
+  * Added a new file liveness.txt in collector pod /tmp folder. Every time collection is performed for any resource, the
     file's access date timestamp is updated.
 
 ## [1201] - 2022-08-09
