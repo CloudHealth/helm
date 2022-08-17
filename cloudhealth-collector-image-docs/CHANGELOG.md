@@ -14,6 +14,10 @@ The agent has been verified against:
   * Added a new file liveness.txt in collector pod /tmp folder.Every time collection is performed for any resource, the
     file's access date timestamp is updated.
 
+## [1201] - 2022-08-09
+### Removed
+* Removed triggering requests to errors endpoint
+
 ## [1191] - 2022-07-25
 ### Added
 * Functionality to collect additional resources from the Kubernetes API including:
