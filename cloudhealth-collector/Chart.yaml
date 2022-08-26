@@ -6,7 +6,9 @@ name: cloudhealth-collector
 description: A Helm chart for CloudHealth's Kubernetes Collector Agent
 type: application
 version: 3.0.0
-appVersion: "1203"
+#appVersion is set to the agent's docker image tag. That makes values.image.tag field obsolete
+#User can still overwrite values.image.tag value by supplying it on commandline
+appVersion: "1191"
 home: https://cloudhealth.vmware.com/
 sources:
 - https://github.com/CloudHealth/helm
