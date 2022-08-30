@@ -15,9 +15,7 @@ jvmMemory: "-Xmx891M"
 
 image:
   repository: cloudhealth/container-collector
-  pullPolicy: Always
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "1203"
 
 imagePullSecrets: []
 nameOverride: ""

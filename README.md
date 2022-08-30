@@ -80,8 +80,8 @@ $ helm repo remove cloudhealth
 | --------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------- |
 | `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""`                              |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector` |
-| `image.tag`                 | CloudHealth Collector image tag (immutable tags are recommended)                                  | `latest`                          |
-| `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `Always`                          |
+| `image.tag`                 | CloudHealth Collector image tag                                                                   | `1203`                          |
+| `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                          |
 | `image.pullSecrets`         | CloudHealth Collector image pull secrets                                                          | `[]`                              |
 | `replicaCount`              | Number of CloudHealth Collector replicas to deploy                                                | `1`                               |
 | `resources.limits.cpu`      | The CPU limits for CloudHealth Collector containers                                               | `1000m`                           |
