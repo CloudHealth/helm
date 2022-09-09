@@ -35,6 +35,8 @@ serviceAccount:
 # Custom labels to add to all resources created by this chart
 customLabels: {}
 
+deployAnnotations: {}
+
 podAnnotations: {}
 
 podSecurityContext: {}
