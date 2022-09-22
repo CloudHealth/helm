@@ -8,6 +8,10 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+## [1222] - 2022-09-21
+### Added
+* Curl command added for troubleshooting assistance
+
 ## [1203] - 2022-08-10
 ### Added
 * Liveness Check for collector pod
