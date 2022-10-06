@@ -8,6 +8,10 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+## [1225] - 2022-10-06
+### Added
+* Multi-platform support for the collector image.  The Docker image now supports both arm64 & amd64 architecture.
+
 ## [1222] - 2022-09-21
 ### Added
 * Curl command added for troubleshooting assistance
