@@ -7,10 +7,18 @@
 
 replicaCount: 1
 
+# Required values, to be specified per deployment:
 apiToken: ""
 clusterName: ""
 
+# The remaining are default values
 collectionIntervalSecs: 900
+
+dnsConfig:
+  options:
+    - name: ndots
+      value: "1"
+
 jvmMemory: "-Xmx891M"
 
 image:
@@ -38,15 +46,8 @@ customLabels: {}
 podAnnotations: {}
 
 podSecurityContext: {}
-  # fsGroup: 2000
 
 containerSecurityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
 
 service:
   type: ClusterIP
@@ -87,5 +88,3 @@ devArgs: |
   ['upload_k8s_state_v3', '--verbose']
 
 customEnvVars: []
-# - name: JAVA_OPTS
-#   value: JAVA_OPTS -Dhttp.proxyHost=xx -Dhttp.proxyPort=xx -Dhttp.nonProxyHosts="xx" -Dhttps.proxyHost=xx -Dhttps.proxyPort=xx -Dhttps.nonProxyHosts="xx"
