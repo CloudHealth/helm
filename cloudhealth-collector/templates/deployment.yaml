@@ -70,6 +70,17 @@ spec:
             {{- end }}
           args: {{ .Values.devArgs }}
       {{- with .Values.nodeSelector }}
+
+      # Modify /etc/resolv.conf ndots
+      {{ if .Values.dnsConfig }}
+      dnsConfig:
+        {{- if .Values.dnsConfig.ndots }}
+          options:
+            - name: ndots
+              value: {{ .Values.dnsConfig.ndots | quote}}
+        {{- end }}
+      {{- end }}
+
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
