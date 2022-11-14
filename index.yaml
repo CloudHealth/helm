@@ -2,8 +2,24 @@ apiVersion: v1
 entries:
   cloudhealth-collector:
   - apiVersion: v2
+    appVersion: 3.2.2
+    created: "2022-11-14T15:05:17.04114Z"
+    description: A Helm chart for CloudHealth's Kubernetes Collector Agent
+    digest: 496503db7216db26f53ab877804d34dfd7cedf6470a77b6d0bcae2a9cfa23e1d
+    home: https://cloudhealth.vmware.com/
+    maintainers:
+    - email: cht-core-containers@groups.vmware.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - https://cloudhealth.github.io/helm/cloudhealth-collector-2.0.6.tgz
+    version: 2.0.6
+  - apiVersion: v2
     appVersion: 3.2.1
-    created: "2022-11-10T20:48:16.94305Z"
+    created: "2022-11-14T15:05:17.040309Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: bc9a01f997d90d59b473ce6aa71e6d44d4d2b17ca8242df1d6a41c7996591d3e
     home: https://cloudhealth.vmware.com/
@@ -19,7 +35,7 @@ entries:
     version: 2.0.5
   - apiVersion: v2
     appVersion: 3.2.0
-    created: "2022-11-10T20:48:16.940917Z"
+    created: "2022-11-14T15:05:17.039493Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 6ddb6adaac5fe4a4e433c6bc73465c1a025d5aff3cba60673ef536fbf659c403
     home: https://cloudhealth.vmware.com/
@@ -35,7 +51,7 @@ entries:
     version: 2.0.4
   - apiVersion: v2
     appVersion: 3.1.0
-    created: "2022-11-10T20:48:16.938582Z"
+    created: "2022-11-14T15:05:17.03866Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 6b65a7e80fcb42fca27bee86c97590eb7791e35e1ebf037bfa58dfa90dbd4e8e
     home: https://cloudhealth.vmware.com/
@@ -51,7 +67,7 @@ entries:
     version: 2.0.3
   - apiVersion: v2
     appVersion: 3.0.0
-    created: "2022-11-10T20:48:16.93624Z"
+    created: "2022-11-14T15:05:17.037703Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 49a5ad4a82c55e5b375522b39a681defae04c4b146b74a6860ff7b6c924dca33
     home: https://cloudhealth.vmware.com/
@@ -67,7 +83,7 @@ entries:
     version: 2.0.2
   - apiVersion: v2
     appVersion: 3.0.0
-    created: "2022-11-10T20:48:16.933158Z"
+    created: "2022-11-14T15:05:17.036539Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: d50a0a5bf076eff665d1a4d7bfa13034bdad8932f345f976572161b6d9167ad3
     home: https://cloudhealth.vmware.com/
@@ -83,7 +99,7 @@ entries:
     version: 2.0.1
   - apiVersion: v2
     appVersion: 3.0.0
-    created: "2022-11-10T20:48:16.929469Z"
+    created: "2022-11-14T15:05:17.034984Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: c59e33296f904124f2499a3c7a703367de19818b6bf6f53465a86dd03b76e2d7
     home: https://cloudhealth.vmware.com/
@@ -99,7 +115,7 @@ entries:
     version: 2.0.0
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.926257Z"
+    created: "2022-11-14T15:05:17.033694Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 197120abaf276818dabfff60fe825df8db1b47d2150c5c71ba48b045ad0f85b2
     home: https://cloudhealth.vmware.com/
@@ -115,7 +131,7 @@ entries:
     version: 1.1.3
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.923449Z"
+    created: "2022-11-14T15:05:17.032447Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 846ecff151977fbfda31ca7fa33751b11c0a3c21f348ea67036a9ba03e523d30
     home: https://cloudhealth.vmware.com/
@@ -131,7 +147,7 @@ entries:
     version: 1.1.2
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.92158Z"
+    created: "2022-11-14T15:05:17.031186Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 2cec4cd7b3a2e286de11fb4a702db129606fe2082119ddd4303306168f126a55
     home: https://cloudhealth.vmware.com/
@@ -147,7 +163,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.919035Z"
+    created: "2022-11-14T15:05:17.029661Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: aeda91ce581f51203a12907414aa7c907c108a8705374e49592fde513ab645da
     home: https://cloudhealth.vmware.com/
@@ -163,7 +179,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.916555Z"
+    created: "2022-11-14T15:05:17.028558Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 9824ef7665f63697e07fe2ca603c9ee0f998c509e9e3a39f1d34ef8d6c76c0c0
     home: https://cloudhealth.vmware.com/
@@ -179,7 +195,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.914403Z"
+    created: "2022-11-14T15:05:17.027559Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: 5932bd28e3f3d07f1a2ba6ee8d3846d4e361cda572a9b9130dae5b059a68faf6
     home: https://cloudhealth.vmware.com/
@@ -195,7 +211,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.912357Z"
+    created: "2022-11-14T15:05:17.026492Z"
     description: A Helm chart for Kubernetes
     digest: b3c4ceb0a235636909e9bc8305c1b46dd3901b18beecf70bd2fdf5c9f5469a6c
     home: https://cloudhealth.vmware.com/
@@ -211,7 +227,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.909899Z"
+    created: "2022-11-14T15:05:17.025458Z"
     description: A Helm chart for Kubernetes
     digest: 1ee9ae57fc83364c77880e2009abb6d9c7ec909c18149758fa47a580ab9299e8
     home: https://cloudhealth.vmware.com/
@@ -227,7 +243,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.908177Z"
+    created: "2022-11-14T15:05:17.024377Z"
     description: A Helm chart for Kubernetes
     digest: d2556ad0970e1a2862800f69d06cb683f63391bb089ee8c1b8f720187a9d11f0
     home: https://cloudhealth.vmware.com/
@@ -243,7 +259,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 2.0.175
-    created: "2022-11-10T20:48:16.904985Z"
+    created: "2022-11-14T15:05:17.023066Z"
     description: A Helm chart for Kubernetes
     digest: 750270f07bf2c72a5ec1a9f37ebad2447dbcb2fca329a290a2343c2c8f88a8e6
     name: cloudhealth-collector
@@ -251,4 +267,4 @@ entries:
     urls:
     - https://cloudhealth.github.io/helm/cloudhealth-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-10T20:48:16.902211Z"
+generated: "2022-11-14T15:05:17.020452Z"
