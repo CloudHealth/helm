@@ -8,6 +8,12 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+## [1263] - 2022-11-14
+
+### Fixed
+
+* Resolves intermittent java.security.InvalidAlgorithmParameterException in arm64-compatible image. 
+
 ## [1225] - 2022-10-06
 
 ### Added
