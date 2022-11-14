@@ -7,10 +7,19 @@
 
 replicaCount: 1
 
+# Required values, to be specified per deployment:
 apiToken: ""
 clusterName: ""
 
+# The remaining are default values
 collectionIntervalSecs: 900
+
+# Adjust the DNS configuration for the pod(s)
+# https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-config
+dnsConfig: {}
+  # Set to 1 in case the collector is unable to resolve the DNS to the collection API (e.g. at containers-api.edge.cloudhealthtech.com)
+  # ndots: 1
+
 jvmMemory: "-Xmx891M"
 
 image:
@@ -38,15 +47,8 @@ customLabels: {}
 podAnnotations: {}
 
 podSecurityContext: {}
-  # fsGroup: 2000
 
 containerSecurityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
 
 service:
   type: ClusterIP
@@ -87,5 +89,3 @@ devArgs: |
   ['upload_k8s_state_v3', '--verbose']
 
 customEnvVars: []
-# - name: JAVA_OPTS
-#   value: JAVA_OPTS -Dhttp.proxyHost=xx -Dhttp.proxyPort=xx -Dhttp.nonProxyHosts="xx" -Dhttps.proxyHost=xx -Dhttps.proxyPort=xx -Dhttps.nonProxyHosts="xx"
