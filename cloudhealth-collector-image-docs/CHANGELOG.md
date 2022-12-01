@@ -8,6 +8,12 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+## [1285] - 2022-12-01
+
+* Base Alpine image updated to 
+[tag 3.17.0](https://hub.docker.com/layers/library/alpine/3.17.0/images/sha256-c0d488a800e4127c334ad20d61d7bc21b4097540327217dfab52262adc02380c?context=explore), 
+patching multiple vulnerabilities
+
 ## [1263] - 2022-11-14
 
 ### Fixed
