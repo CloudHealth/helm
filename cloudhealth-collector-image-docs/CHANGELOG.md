@@ -8,6 +8,12 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+## [PR-86] - 2023-02-03
+
+### Fixed
+
+Fix nil-pointer issue in values dnsConfig in v2.0.7 of the helm chart.
+
 ## [1285] - 2022-12-01
 
 * Base Alpine image updated to 
