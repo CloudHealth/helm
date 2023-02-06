@@ -3,6 +3,7 @@ Copyright 2021 VMware, Inc.
 SPDX-License-Identifier: Apache-2.0
 */}}
 
+{{- $dnsConfig := .Values.dnsConfig | default dict }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -72,15 +73,14 @@ spec:
       {{- with .Values.nodeSelector }}
 
       # Modify /etc/resolv.conf ndots
-      {{ if .Values.dnsConfig }}
-          dnsConfig:
-      {{- if .Values.dnsConfig.ndots }}
-            options:
-              - name: ndots
-                value: {{ .Values.dnsConfig.ndots | quote}}
+      {{ if $dnsConfig }}
+      dnsConfig:
+        {{- if $dnsConfig.ndots }}
+        options:
+          - name: ndots
+            value: {{ $dnsConfig.ndots | quote}}
+        {{- end }}
       {{- end }}
-      {{- end }}
-
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
