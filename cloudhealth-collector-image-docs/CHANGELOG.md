@@ -13,15 +13,12 @@ The agent has been verified against:
 ### Security
 
 * Vulnerabilities patched:
+  * [CVE-2023-0286](https://nvd.nist.gov/vuln/detail/CVE-2023-0286)
+  * [CVE-2022-25857](https://nvd.nist.gov/vuln/detail/CVE-2022-25857)
+  * [CVE-2022-3996](https://nvd.nist.gov/vuln/detail/CVE-2022-3996)
   * [CVE-2022-42003](https://nvd.nist.gov/vuln/detail/CVE-2022-42003)
   * [CVE-2022-42004](https://nvd.nist.gov/vuln/detail/CVE-2022-42004)
-  * [CVE-2022-25857](https://nvd.nist.gov/vuln/detail/CVE-2022-25857)
   * [CVE-2022-43551](https://nvd.nist.gov/vuln/detail/CVE-2022-43551)
-  * [CVE-2022-3996](https://nvd.nist.gov/vuln/detail/CVE-2022-3996)
-  * [CVE-2023-0286](https://nvd.nist.gov/vuln/detail/CVE-2023-0286)
-  * [CVE-2022-43551](https://nvd.nist.gov/vuln/detail/CVE-2022-43551)
-  * [CVE-2022-3996](https://nvd.nist.gov/vuln/detail/CVE-2022-3996)
-  * [CVE-2023-0286](https://nvd.nist.gov/vuln/detail/CVE-2023-0286)
 
 
 ## [1285] - 2022-12-01
