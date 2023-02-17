@@ -46,9 +46,16 @@ customLabels: {}
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext: {
+  runAsNonRoot: true
+}
 
-containerSecurityContext: {}
+containerSecurityContext: {
+  allowPrivilegeEscalation: false,
+  readOnlyRootFilesystem: true,
+  runAsNonRoot: true,
+  capabilities: {drop: [all]}
+}
 
 service:
   type: ClusterIP
