@@ -24,7 +24,7 @@ jvmMemory: "-Xmx891M"
 
 image:
   repository: cloudhealth/container-collector
-  tag: "1307"
+  tag: "1308"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -46,9 +46,16 @@ customLabels: {}
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext: {
+  runAsNonRoot: true
+}
 
-containerSecurityContext: {}
+containerSecurityContext: {
+  allowPrivilegeEscalation: false,
+  readOnlyRootFilesystem: true,
+  runAsNonRoot: true,
+  capabilities: {drop: [all]}
+}
 
 service:
   type: ClusterIP
