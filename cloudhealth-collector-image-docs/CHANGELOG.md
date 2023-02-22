@@ -5,8 +5,14 @@ All notable changes for each upgraded tag of the CloudHealth Container Collector
 The agent has been verified against:
 
 [Kubernetes Versions ≥ 1.12](https://kubernetes.io/releases/)</br>
-[Kubernetes Versions ≤ 1.23](https://kubernetes.io/releases/)</br>
+[Kubernetes Versions ≤ 1.26](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
+
+## [1308] - 2023-02-22
+
+### Security
+
+* Assigned ID to the container's user within the Dockerfile to allow for use of `runAsNonRoot` security context option.
 
 ## [1307] - 2023-02-16
 
