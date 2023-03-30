@@ -3,6 +3,22 @@ entries:
   cloudhealth-collector:
   - apiVersion: v2
     appVersion: 3.2.5
+    created: "2023-03-30T15:01:16.94884803Z"
+    description: A Helm chart for CloudHealth's Kubernetes Collector Agent
+    digest: 4c2a2dbf43b7a9dd603e19d64c93836282a3b842bd1fc1cc3ecf373d406d76a0
+    home: https://cloudhealth.vmware.com/
+    maintainers:
+    - email: cht-core-containers@groups.vmware.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-2.0.11/cloudhealth-collector-2.0.11.tgz
+    version: 2.0.11
+  - apiVersion: v2
+    appVersion: 3.2.5
     created: "2023-03-30T14:31:11.160800838Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: ed9eaa37c55c4b85e90e8b1faf8298d0096aa11e7a3bd4719154d89c7d39537d
@@ -331,4 +347,4 @@ entries:
     urls:
     - https://cloudhealth.github.io/helm/cloudhealth-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-30T14:31:11.160943837Z"
+generated: "2023-03-30T15:01:16.94903643Z"
