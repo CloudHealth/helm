@@ -14,9 +14,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "cloudhealth-collector.selectorLabels" . | nindent 6 }}
@@ -30,8 +28,8 @@ spec:
         {{- include "cloudhealth-collector.labels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ include "cloudhealth-collector.serviceAccountName" . }}
-      {{- with .Values.podSecurityContext }} 
-      securityContext: {{- toYaml . | nindent 8 }} 
+      {{- with .Values.podSecurityContext }}
+      securityContext: {{- toYaml . | nindent 8 }}
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
@@ -48,13 +46,13 @@ spec:
             initialDelaySeconds: {{ .Values.liveness.initialDelaySeconds }}
             failureThreshold: {{ .Values.liveness.failureThreshold }}
             periodSeconds: {{ .Values.liveness.periodSeconds }}
-          {{- with .Values.containerSecurityContext }} 
-          securityContext: {{- toYaml . | nindent 12 }} 
+          {{- with .Values.containerSecurityContext }}
+          securityContext: {{- toYaml . | nindent 12 }}
           {{- end }}
           {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }}
-          volumeMounts: 
-            - mountPath: /tmp 
-              name: tmpfs 
+          volumeMounts:
+            - mountPath: /tmp
+              name: tmpfs
           {{- end }}
           env:
             - name: CHT_API_TOKEN
@@ -73,6 +71,17 @@ spec:
               value: {{ .value }}
             {{- end }}
           args: {{ .Values.devArgs }}
+
+      # Modify /etc/resolv.conf ndots
+      {{ if .Values.dnsConfig }}
+      dnsConfig:
+      {{- if .Values.dnsConfig.ndots }}
+        options:
+          - name: ndots
+            value: {{ .Values.dnsConfig.ndots | quote}}
+      {{- end }}
+      {{- end }}
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -85,8 +94,8 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }} 
-      volumes: 
-        - name: tmpfs 
-          emptyDir: {} 
+      {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }}
+      volumes:
+        - name: tmpfs
+          emptyDir: {}
       {{- end }}
