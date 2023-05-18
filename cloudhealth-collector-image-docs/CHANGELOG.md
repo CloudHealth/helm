@@ -8,6 +8,13 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.26](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
+
+## [1325] - 2023-05-18
+
+### Changed
+
+* Updated base image for the CloudHealth Container Collector image to [Photon v.5](https://hub.docker.com/_/photon)
+
 ## [1308] - 2023-02-22
 
 ### Security
