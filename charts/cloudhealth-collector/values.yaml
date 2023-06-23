@@ -7,8 +7,10 @@
 
 replicaCount: 1
 
-# Required values, to be specified per deployment:
+# Set to automatically create secret, or create a secret with the name specified by the 'secretName' parameter
 apiToken: ""
+
+# Required value, to be uniquely specified per deployment:
 clusterName: ""
 
 # The remaining are default values
