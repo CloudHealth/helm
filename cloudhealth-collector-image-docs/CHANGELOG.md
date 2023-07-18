@@ -10,7 +10,7 @@ The agent has been verified against:
 
 All versions before June 20, 2022 have been deprecated.
 
-## [1353] - 2023-07-13
+## [1353] - 2023-07-19
 
 ### Added
 
