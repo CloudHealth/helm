@@ -10,6 +10,11 @@ The agent has been verified against:
 
 All versions before June 20, 2022 have been deprecated.
 
+## [1360] - 2023-07-19
+
+### Added
+
+* The collector docker image now supports collecting the UID and kubernetes agent version.
 
 ## [1325] - 2023-05-18
 
