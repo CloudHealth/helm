@@ -5,8 +5,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
-
 # Set to automatically create secret, or create a secret with the name specified by the 'secretName' parameter
 apiToken: ""
 
