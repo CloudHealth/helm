@@ -119,7 +119,7 @@ You can also use YAML file to specify the parameters while installing the chart.
 $ helm install cloudhealth-collector -f values.yaml cloudhealth/cloudhealth-collector
 ```
 
-> **Tip**: You can use the default [values.yaml](cloudhealth-collector/values.yaml)
+> **Tip**: You can use the default [values.yaml](charts/cloudhealth-collector/values.yaml)
 
 ## Troubleshooting
 
