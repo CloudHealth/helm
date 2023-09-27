@@ -1,4 +1,4 @@
-<!-- Copyright 2021 VMware, Inc. -->
+<!-- Copyright 2023 VMware, Inc. -->
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 # CloudHealth Kubernetes Collector Agent Helm Chart
 
@@ -82,8 +82,7 @@ $ helm repo remove cloudhealth
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector` |
 | `image.tag`                 | CloudHealth Collector image tag                                                                   | `1203`                          |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                          |
-| `image.pullSecrets`         | CloudHealth Collector image pull secrets                                                          | `[]`                              |
-| `replicaCount`              | Number of CloudHealth Collector replicas to deploy                                                | `1`                               |
+| `image.pullSecrets`         | CloudHealth Collector image pull secrets                                                          | `[]`                              |                              |
 | `resources.limits.cpu`      | The CPU limits for CloudHealth Collector containers                                               | `1000m`                           |
 | `resources.requests.cpu`    | The requested CPU for CloudHealth Collector containers                                            | `500m`                            |
 | `resources.limits.memory`   | The Memory limits for CloudHealth Collector containers                                            | `1024Mi`                          |
@@ -120,7 +119,7 @@ You can also use YAML file to specify the parameters while installing the chart.
 $ helm install cloudhealth-collector -f values.yaml cloudhealth/cloudhealth-collector
 ```
 
-> **Tip**: You can use the default [values.yaml](cloudhealth-collector/values.yaml)
+> **Tip**: You can use the default [values.yaml](charts/cloudhealth-collector/values.yaml)
 
 ## Troubleshooting
 
