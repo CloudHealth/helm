@@ -79,7 +79,7 @@ $ helm repo remove cloudhealth
 | Name                        | Description                                                                                       | Value                             |
 |-----------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------|
 | `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""`                              |
-| `chtRegion`                 | Cloudhealth Region                                                                                | `us-east-1`                       |
+| `chtRegion`                 | CloudHealth Region (It has to be a valid AWS Region Code)                                         | `us-east-1`                       |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector` |
 | `image.tag`                 | CloudHealth Collector image tag                                                                   | `1203`                            |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                    |
