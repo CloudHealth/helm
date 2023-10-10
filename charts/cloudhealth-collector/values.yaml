@@ -94,3 +94,4 @@ customEnvVars: []
 
 chOptimizer:
   enabled: false
+  name: cloudhealth-optimizer-agent
