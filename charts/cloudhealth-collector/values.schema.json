@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "https://json-schema.org/draft-07/schema#",
     "type": "object",
     "required": [
         "apiToken",
@@ -23,14 +23,16 @@
             "type": "string"
         },
         "clusterName": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^.{1,255}$"
         },
         "chtRegion": {
             "type": "string",
             "pattern": "^(us-east-1|us-east-2)$"
         },
         "collectionIntervalSecs": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 900
         },
         "jvmMemory": {
             "type": "string"
@@ -43,7 +45,8 @@
             ],
             "properties": {
                 "repository": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^cloudhealth/container-collector$"
                 },
                 "tag": {
                     "type": "string"
@@ -118,7 +121,8 @@
             ],
             "properties": {
                 "type": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^ClusterIP$"
                 },
                 "port": {
                     "type": "integer"
