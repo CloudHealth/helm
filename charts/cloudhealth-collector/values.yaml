@@ -62,10 +62,6 @@ containerSecurityContext: {
   capabilities: {drop: [all]}
 }
 
-service:
-  type: ClusterIP
-  port: 80
-
 resources:
   limits:
     cpu: 1000m
@@ -84,11 +80,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-# Role-based Access Control
-rbac:
-  # Specifies whether RBAC resources should be created
-  create: true
 
 devArgs: |
   ['upload_k8s_state_v4', '--verbose']

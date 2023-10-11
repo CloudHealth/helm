@@ -91,8 +91,6 @@ $ helm repo remove cloudhealth
 | `nameOverride`              | String to override common.names.fullname                                                          | `""`                              |
 | `fullnameOverride`          | String to fully override common.names.fullname                                                    | `""`                              |
 | `secretName`                | Kubernetes secret name created to store CloudHealth API Token & Secret                            | `cloudhealth-config`              |
-| `service.type`              | CloudHealth Collector UI Service Type                                                             | `ClusterIP`                       |
-| `service.port`              | CloudHealth Collector UI Service Type                                                             | `80`                              |
 | `podAnnotations`            | Additional pod annotations                                                                        | `{}`                              |
 | `podSecurityContext`        | Enable security context for CloudHealth Collector pods                                            | `{}`                              |
 | `securityContext`           | Enable security context for CloudHealth Collector                                                 | `{}`                              |

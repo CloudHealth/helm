@@ -12,15 +12,14 @@
         "serviceAccount",
         "podSecurityContext",
         "containerSecurityContext",
-        "service",
         "resources",
         "liveness",
-        "rbac",
         "devArgs"
     ],
     "properties": {
         "apiToken": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^.{6,48}$"
         },
         "clusterName": {
             "type": "string",
@@ -45,8 +44,7 @@
             ],
             "properties": {
                 "repository": {
-                    "type": "string",
-                    "pattern": "^cloudhealth/container-collector$"
+                    "type": "string"
                 },
                 "tag": {
                     "type": "string"
@@ -113,22 +111,6 @@
                 }
             }
         },
-        "service": {
-            "type": "object",
-            "required": [
-                "type",
-                "port"
-            ],
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "pattern": "^ClusterIP$"
-                },
-                "port": {
-                    "type": "integer"
-                }
-            }
-        },
         "resources": {
             "type": "object",
             "required": [
@@ -184,17 +166,6 @@
                 },
                 "periodSeconds": {
                     "type": "integer"
-                }
-            }
-        },
-        "rbac": {
-            "type": "object",
-            "required": [
-                "create"
-            ],
-            "properties": {
-                "create": {
-                    "type": "boolean"
                 }
             }
         },
