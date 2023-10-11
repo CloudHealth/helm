@@ -6,8 +6,9 @@ name: cloudhealth-collector
 description: A Helm chart for CloudHealth's Kubernetes Collector Agent
 type: application
 version: 4.2.0
-appVersion: "5.0.0"
+appVersion: "5.1.0"
 home: https://cloudhealth.vmware.com/
+icon: https://vmware.com/content/dam/digitalmarketing/vmware/en/images/company/vmware-logo-grey.svg
 sources:
 - https://github.com/CloudHealth/helm
 maintainers:
