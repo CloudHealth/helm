@@ -83,7 +83,7 @@ $ helm repo remove cloudhealth
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector` |
 | `image.tag`                 | CloudHealth Collector image tag                                                                   | `1360`                            |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                    |
-| `image.pullSecrets`         | CloudHealth Collector image pull secrets                                                          | `[]`                              |                              |
+| `image.pullSecrets`         | CloudHealth Collector image pull secrets                                                          | `[]`                              |
 | `resources.limits.cpu`      | The CPU limits for CloudHealth Collector containers                                               | `1000m`                           |
 | `resources.requests.cpu`    | The requested CPU for CloudHealth Collector containers                                            | `500m`                            |
 | `resources.limits.memory`   | The Memory limits for CloudHealth Collector containers                                            | `1024Mi`                          |
