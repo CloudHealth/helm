@@ -25,6 +25,7 @@ jvmMemory: "-Xmx891M"
 image:
   repository: cloudhealth/container-collector
   tag: "1360"
+  pullPolicy: "IfNotPresent"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -95,3 +96,7 @@ customEnvVars: []
 chOptimizer:
   enabled: false
   name: cloudhealth-optimizer-agent
+  image:
+    repository: cloudhealth/optimizer-agent
+    tag: "1"
+    pullPolicy: "IfNotPresent"

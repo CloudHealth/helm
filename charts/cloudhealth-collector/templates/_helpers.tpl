@@ -73,3 +73,18 @@ Create the name of the secrets to use
 {{- define "cloudhealth-collector.secretName" -}}
 {{- default .Values.secretName }}
 {{- end }}
+
+{{/*
+Create the name for CH Optimizer Agent
+*/}}
+{{- define "cloudhealth-optimizer-agent.name" -}}
+{{- default .Values.chOptimizer.name }}
+{{- end }}
+
+{{/*
+CH Optimizer Agent Selector labels
+*/}}
+{{- define "cloudhealth-optimizer-agent.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cloudhealth-optimizer-agent.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}

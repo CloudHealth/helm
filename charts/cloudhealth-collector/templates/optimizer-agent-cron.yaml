@@ -1,19 +1,52 @@
+{{- /*
+Copyright 2023 VMware, Inc.
+SPDX-License-Identifier: Apache-2.0
+*/}}
+
+{{- if .Values.chOptimizer.enabled }}
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: hello
+  name: {{ include "cloudhealth-optimizer-agent.name" . }}
+  labels:
+    {{- include "cloudhealth-collector.labels" . | nindent 4 }}
+  {{- with .Values.deployAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
+  selector:
+    matchLabels:
+      {{- include "cloudhealth-optimizer-agent.selectorLabels" . | nindent 6 }}
   schedule: "* * * * *"
   jobTemplate:
     spec:
       template:
         spec:
+          serviceAccountName: {{ include "cloudhealth-collector.serviceAccountName" . }}
           containers:
           - name: hello
-            image: busybox:1.28
-            imagePullPolicy: IfNotPresent
+            env:
+              - name: CHT_REGION
+                value: {{.Values.chtRegion | default "us-east-1" }}
+            image: "{{ .Values.chOptimizer.image.repository }}:{{ .Values.chOptimizer.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: {{ .Values.chOptimizer.image.pullPolicy }}
             command:
             - /bin/sh
             - -c
             - date; echo Hello from the Kubernetes cluster
+
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          {{- with .Values.affinity }}
+          affinity:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
           restartPolicy: OnFailure
+{{- end }}
