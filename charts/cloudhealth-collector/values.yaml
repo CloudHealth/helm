@@ -97,6 +97,6 @@ chOptimizer:
   enabled: false
   name: cloudhealth-optimizer-agent
   image:
-    repository: cloudhealth/optimizer-agent
+    repository: cloudhealth/cloudhealth-optimizer-agent
     tag: "1"
     pullPolicy: "IfNotPresent"
