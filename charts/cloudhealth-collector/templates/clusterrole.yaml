@@ -22,3 +22,6 @@ rules:
 - apiGroups: ["batch"]
   resources: ["cronjobs", "jobs"]
   verbs: ["get", "list"]
+- apiGroups: ["k8so.vmware.com"]
+  resources: ["optimizationrecommendations"]
+  verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
