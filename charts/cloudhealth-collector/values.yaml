@@ -100,3 +100,5 @@ chOptimizer:
     repository: cloudhealth/cloudhealth-optimizer-agent
     tag: "1"
     pullPolicy: "IfNotPresent"
+  # Set to automatically create secret, or create a secret with the name specified by the 'secretName' parameter
+  chapiToken: ""

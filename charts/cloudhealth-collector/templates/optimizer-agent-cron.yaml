@@ -27,6 +27,13 @@ spec:
           containers:
           - name: hello
             env:
+              - name: CHAPI_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: {{ include "cloudhealth-collector.secretName" . }}
+                    key: chapiToken
+              - name: CHT_CLUSTER_NAME
+                value: {{.Values.clusterName | required "A valid clusterName required!" | quote }}
               - name: CHT_REGION
                 value: {{.Values.chtRegion | default "us-east-1" }}
             image: "{{ .Values.chOptimizer.image.repository }}:{{ .Values.chOptimizer.image.tag | default .Chart.AppVersion }}"
