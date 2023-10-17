@@ -15,9 +15,6 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
-  selector:
-    matchLabels:
-      {{- include "cloudhealth-optimizer-agent.selectorLabels" . | nindent 6 }}
   schedule: "0 12 * * *"
   jobTemplate:
     spec:

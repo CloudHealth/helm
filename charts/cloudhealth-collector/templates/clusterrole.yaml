@@ -22,6 +22,8 @@ rules:
 - apiGroups: ["batch"]
   resources: ["cronjobs", "jobs"]
   verbs: ["get", "list"]
+{{- if .Values.chOptimizer.enabled }}
 - apiGroups: ["k8so.vmware.com"]
   resources: ["optimizationrecommendations"]
   verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
+{{- end }}
