@@ -8,8 +8,7 @@ type: application
 version: 5.0.4-alpha
 appVersion: "4.1.0"
 dependencies:
-  - name: cloudhealth-optimization-controller
-    repository: file://subcharts/k8s-optimization-0.2.0.tgz
+  - name: k8s-optimization-0.2.0.tgz
     version: 0.2.0
     condition: chOptimizer.enabled
 home: https://cloudhealth.vmware.com/
