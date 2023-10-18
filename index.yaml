@@ -3,6 +3,28 @@ entries:
   cloudhealth-collector:
   - apiVersion: v2
     appVersion: 4.1.0
+    created: "2023-10-18T20:06:08.690097934Z"
+    dependencies:
+    - condition: chOptimizer.enabled
+      name: cloudhealth-optimization-controller
+      repository: file://subcharts/cloudhealth-optimization-controller
+      version: 0.2.0
+    description: A Helm chart for CloudHealth's Kubernetes Collector and Optimizer
+      Agent
+    digest: 6283769b89d3e9d659f80b4e7bbbff67dac5e30882454d01c8760c3c607c3b6b
+    home: https://cloudhealth.vmware.com/
+    maintainers:
+    - email: cht-core-containers@groups.vmware.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-5.0.7-alpha/cloudhealth-collector-5.0.7-alpha.tgz
+    version: 5.0.7-alpha
+  - apiVersion: v2
+    appVersion: 4.1.0
     created: "2023-10-18T19:17:33.039123293Z"
     dependencies:
     - condition: chOptimizer.enabled
@@ -223,4 +245,4 @@ entries:
     urls:
     - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-2.0.10/cloudhealth-collector-2.0.10.tgz
     version: 2.0.10
-generated: "2023-10-18T19:17:33.039375298Z"
+generated: "2023-10-18T20:06:08.690230345Z"
