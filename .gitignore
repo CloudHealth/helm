@@ -1,2 +1,5 @@
 .DS_Store
 _build
+*.tgz
+.vscode/
+Chart.lock
