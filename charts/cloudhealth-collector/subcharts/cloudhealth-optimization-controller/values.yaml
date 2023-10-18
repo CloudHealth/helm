@@ -33,7 +33,7 @@ controllerManager:
         - ALL
     image:
       repository: cloudhealth/cloudhealth-optimization-controller-dev
-      tag: 0.2.0
+      tag: 1.0.0
     resources:
       limits:
         cpu: 500m
