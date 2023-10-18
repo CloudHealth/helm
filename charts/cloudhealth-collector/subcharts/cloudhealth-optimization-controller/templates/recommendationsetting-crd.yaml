@@ -1,0 +1,267 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: optimizationrecommendationsettings.k8so.vmware.com
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.11.1
+  labels:
+  {{- include "k8s-optimization.labels" . | nindent 4 }}
+spec:
+  group: k8so.vmware.com
+  names:
+    categories:
+    - recommendationsettings
+    kind: OptimizationRecommendationSettings
+    listKind: OptimizationRecommendationSettingsList
+    plural: optimizationrecommendationsettings
+    singular: recommendationsetting
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: OptimizationRecommendationSettings is the Schema for the optimizationrecommendationsettings
+          API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: OptimizationRecommendationSettingsSpec defines the desired
+              state of OptimizationRecommendationSettings
+            properties:
+              applyTo:
+                description: Namespace indicating the namespace in which recommendations
+                  reside to which these settings apply
+                items:
+                  properties:
+                    kinds:
+                      description: Kinds to which the settings apply
+                      items:
+                        description: VersionedTargetKind defines the resource to which
+                          the recommendation should be applied. If the optional APIVersion
+                          is missing, just the Name and Kind are used to get the target
+                          resource If the optional Namespace is missing, the namespace
+                          of the recommendation is used to get the target resource
+                        properties:
+                          apiVersion:
+                            description: API version of the referent
+                            type: string
+                          kind:
+                            description: 'Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"'
+                            type: string
+                        required:
+                        - kind
+                        type: object
+                      type: array
+                    namespaces:
+                      description: Namespaces to which the settings apply
+                      items:
+                        type: string
+                      type: array
+                    scopeName:
+                      description: ScopeName is the name of the scope that defines what
+                        recommendations the settings apply to
+                      type: string
+                    selector:
+                      description: LabelSelector indicating the recommendations that
+                        the settings applies to
+                      items:
+                        description: A label selector is a label query over a set of
+                          resources. The result of matchLabels and matchExpressions
+                          are ANDed. An empty label selector matches all objects. A
+                          null label selector matches no objects.
+                        properties:
+                          matchExpressions:
+                            description: matchExpressions is a list of label selector
+                              requirements. The requirements are ANDed.
+                            items:
+                              description: A label selector requirement is a selector
+                                that contains values, a key, and an operator that relates
+                                the key and values.
+                              properties:
+                                key:
+                                  description: key is the label key that the selector
+                                    applies to.
+                                  type: string
+                                operator:
+                                  description: operator represents a key's relationship
+                                    to a set of values. Valid operators are In, NotIn,
+                                    Exists and DoesNotExist.
+                                  type: string
+                                values:
+                                  description: values is an array of string values.
+                                    If the operator is In or NotIn, the values array
+                                    must be non-empty. If the operator is Exists or
+                                    DoesNotExist, the values array must be empty. This
+                                    array is replaced during a strategic merge patch.
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - key
+                              - operator
+                              type: object
+                            type: array
+                          matchLabels:
+                            additionalProperties:
+                              type: string
+                            description: matchLabels is a map of {key,value} pairs.
+                              A single {key,value} in the matchLabels map is equivalent
+                              to an element of matchExpressions, whose key field is
+                              "key", the operator is "In", and the values array contains
+                              only "value". The requirements are ANDed.
+                            type: object
+                        type: object
+                        x-kubernetes-map-type: atomic
+                      type: array
+                  type: object
+                type: array
+              applyToExistingPropertiesOnly:
+                default: false
+                description: 'ApplyToExistingPropertiesOnly instructs the controller
+                  to only apply recommended settings to existing properties of the resource
+                  and not to create new properties that are present in the recommendation,
+                  but not in the resource Example: If a recommendation contained a resource
+                  request for storage, but the resource (e.g. a deployment) did not
+                  specify a storage resource request, if the flag is false, a storage
+                  resource request will be added to the resource (e.g. a deployment),
+                  but if the flag is true, no storage resource request will be added.'
+                enum:
+                - false
+                - true
+                type: boolean
+              constraintViolationPolicy:
+                description: 'Policy for handling constraint violations Fail: Fail if
+                  the recommended values violate the constraints Conform: Conform the
+                  recommended values to the constraints if they are violated and proceed
+                  with the update'
+                enum:
+                - Fail
+                - Conform
+                type: string
+              containerConstraints:
+                description: Constraints for containers with which recommendations must
+                  comply
+                properties:
+                  resourceLowerBounds:
+                    description: ResourceLowerBounds specifies the acceptable lower
+                      bounds for container resources specified in a recommendations
+                    properties:
+                      limits:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Limits describes the maximum amount of compute
+                          resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                      requests:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Requests describes the minimum amount of compute
+                          resources required. If Requests is omitted for a container,
+                          it defaults to Limits if that is explicitly specified, otherwise
+                          to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                    type: object
+                  resourceUpperBounds:
+                    description: ResourceUpperBounds specifies the acceptable upper
+                      bounds for container resources specified in a recommendations
+                    properties:
+                      limits:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Limits describes the maximum amount of compute
+                          resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                      requests:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Requests describes the minimum amount of compute
+                          resources required. If Requests is omitted for a container,
+                          it defaults to Limits if that is explicitly specified, otherwise
+                          to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                    type: object
+                type: object
+              defaultUpdateMode:
+                allOf:
+                - enum:
+                  - Auto
+                  - Manual
+                - enum:
+                  - Auto
+                  - Manual
+                type: string
+              relativePriority:
+                description: RelativePriority instructs the controller to apply recommended
+                  settings that as the highest numeric RelativePriority value
+                format: int32
+                maximum: 10
+                minimum: 1
+                type: integer
+              replicasConstraints:
+                description: Constraints for replicas with which recommendations must
+                  comply
+                properties:
+                  maxReplicas:
+                    description: Maximum Replicas allowed by a recommendation Pointer
+                      to distinguish between 0 and not set
+                    format: int32
+                    type: integer
+                  minReplicas:
+                    description: Minimum Replicas allowed by a recommendation Pointer
+                      to distinguish between 0 and not set
+                    format: int32
+                    minimum: 0
+                    type: integer
+                type: object
+              useTargetRefLabelsForSelectorMatching:
+                description: UseTargetRefLabelsForSelectorMatching indicates whether
+                  the labels of the target resource should be used to match the selector
+                enum:
+                - false
+                - true
+                type: boolean
+            required:
+            - defaultUpdateMode
+            type: object
+          status:
+            description: OptimizationRecommendationSettingsStatus defines the observed
+              state of OptimizationRecommendationSettings
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
