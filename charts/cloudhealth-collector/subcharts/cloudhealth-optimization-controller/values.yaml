@@ -1,3 +1,4 @@
+fullnameOverride: cloudhealth-optimization
 controllerManager:
   kubeRbacProxy:
     args:
@@ -31,7 +32,7 @@ controllerManager:
         drop:
         - ALL
     image:
-      repository: cloudhealth/cloudhealth-optimizer-agent
+      repository: cloudhealth/cloudhealth-optimization-controller-dev
       tag: 0.2.0
     resources:
       limits:
