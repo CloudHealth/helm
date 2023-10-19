@@ -96,6 +96,7 @@ customEnvVars: []
 optimizer:
   enabled: false
   name: cloudhealth-optimizer-agent
+  springProfile: prod
   image:
     repository: cloudhealth/cloudhealth-optimizer-agent
     tag: "latest"

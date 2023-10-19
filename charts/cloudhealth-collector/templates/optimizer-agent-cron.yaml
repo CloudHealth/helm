@@ -33,6 +33,8 @@ spec:
                 value: {{.Values.clusterName | required "A valid clusterName required!" | quote }}
               - name: CHT_REGION
                 value: {{.Values.chtRegion | default "us-east-1" }}
+              - name: SPRING_PROFILES_ACTIVE
+                value: {{.Values.optimizer.springProfile | default "prod" }}
             image: "{{ .Values.optimizer.image.repository }}:{{ .Values.optimizer.image.tag | default .Chart.AppVersion }}"
             imagePullPolicy: {{ .Values.optimizer.image.pullPolicy }}
 
