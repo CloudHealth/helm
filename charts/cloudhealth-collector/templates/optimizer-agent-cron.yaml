@@ -3,7 +3,7 @@ Copyright 2023 VMware, Inc.
 SPDX-License-Identifier: Apache-2.0
 */}}
 
-{{- if .Values.chOptimizer.enabled }}
+{{- if .Values.cloudhealth-optimizer.enabled }}
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -33,12 +33,8 @@ spec:
                 value: {{.Values.clusterName | required "A valid clusterName required!" | quote }}
               - name: CHT_REGION
                 value: {{.Values.chtRegion | default "us-east-1" }}
-            image: "{{ .Values.chOptimizer.image.repository }}:{{ .Values.chOptimizer.image.tag | default .Chart.AppVersion }}"
-            imagePullPolicy: {{ .Values.chOptimizer.image.pullPolicy }}
-            command:
-            - /bin/sh
-            - -c
-            - date; echo Hello from the Kubernetes cluster
+            image: "{{ .Values.cloudhealth-optimizer.image.repository }}:{{ .Values.cloudhealth-optimizer.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: {{ .Values.cloudhealth-optimizer.image.pullPolicy }}
 
           {{- with .Values.nodeSelector }}
           nodeSelector:
