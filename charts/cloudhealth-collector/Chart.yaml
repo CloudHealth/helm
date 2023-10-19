@@ -8,9 +8,11 @@ type: application
 version: 4.2.0
 appVersion: "5.0.0"
 home: https://cloudhealth.vmware.com/
-icon: https://vmware.com/content/dam/digitalmarketing/vmware/en/images/company/vmware-logo-grey.svg
+icon: https://cloudsolutions.vmware.com/content/dam/digitalmarketing/vmware/en/images/gallery/icons/icon-prod-vmw-aria-cost-rgb-400px.svg
 sources:
 - https://github.com/CloudHealth/helm
 maintainers:
   - name: CloudHealth Team
     email: cht-core-containers@groups.vmware.com
+annotations:
+  category: Cost
