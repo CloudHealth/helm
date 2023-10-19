@@ -78,7 +78,7 @@ Create the name of the secrets to use
 Create the name for CH Optimizer Agent
 */}}
 {{- define "cloudhealth-optimizer-agent.name" -}}
-{{- default .Values.cloudhealth-optimizer.name }}
+{{- default .Values.optimizer.name }}
 {{- end }}
 
 {{/*

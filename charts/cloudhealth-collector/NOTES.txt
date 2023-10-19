@@ -33,6 +33,6 @@ helm install cloudhealth-collector --debug --dry-run --set apiToken=$CHT_API_TOK
 helm install cloudhealth-collector --debug --dry-run --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,image.repository=latest-libs-06-13-3,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" --set "customEnvVars[0].name=ENV4" --set "customEnvVars[0].value=VALUE4" --set serviceAccount.name=sample_service_account ./cloudhealth-collector-1.1.2.tgz
 
 NEW ALPHA IMAGE INSTRUCTIONS:
-helm install cloudhealth-collector --debug --dry-run -n cloudhealth --set cloudhealth-optimizer.enabled=true,cloudhealth-optimizer.chapiToken=xyzabc,clusterName=test-cluster,apiToken=tttyyy cloudhealth/cloudhealth-collector --version 5.0.6-alpha
+helm install cloudhealth-collector --debug --dry-run -n cloudhealth --set optimizer.enabled=true,optimizer.chapiToken=xyzabc,clusterName=test-cluster,apiToken=tttyyy cloudhealth/cloudhealth-collector --version 5.0.6-alpha
 
 helm install cloudhealth-collector --debug --dry-run -n cloudhealth --set clusterName=test-cluster,apiToken=tttyyy cloudhealth/cloudhealth-collector --version 5.0.6-alpha

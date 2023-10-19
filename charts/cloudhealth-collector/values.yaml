@@ -93,7 +93,7 @@ devArgs: |
 
 customEnvVars: []
 
-cloudhealth-optimizer:
+optimizer:
   enabled: false
   name: cloudhealth-optimizer-agent
   image:
