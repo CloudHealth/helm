@@ -8,7 +8,7 @@ type: application
 version: 4.2.0
 appVersion: "5.1.0"
 home: https://cloudhealth.vmware.com/
-icon: https://cloudsolutions.vmware.com/content/dam/digitalmarketing/vmware/en/images/gallery/icons/icon-prod-vmw-aria-cost-rgb-400px.svg
+icon: https://d1fto35gcfffzn.cloudfront.net/images/Tanzu-Logomark.svg
 sources:
 - https://github.com/CloudHealth/helm
 maintainers:
