@@ -22,7 +22,7 @@ spec:
         spec:
           serviceAccountName: {{ include "cloudhealth-collector.serviceAccountName" . }}
           containers:
-          - name: hello
+          - name: {{ include "cloudhealth-optimizer-agent.name" . }}
             env:
               - name: CHAPI_KEY
                 valueFrom:
