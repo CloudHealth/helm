@@ -81,7 +81,7 @@ $ helm repo remove cloudhealth
 | `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""`                              |
 | `chtRegion`                 | CloudHealth Region (It has to be a valid AWS Region Code)                                         | `us-east-1`                       |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector` |
-| `image.tag`                 | CloudHealth Collector image tag                                                                   | `1360`                            |
+| `image.tag`                 | CloudHealth Collector image tag                                                                   | `1398`                            |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                    |
 | `image.pullSecrets`         | CloudHealth Collector image pull secrets                                                          | `[]`                              |
 | `resources.limits.cpu`      | The CPU limits for CloudHealth Collector containers                                               | `1000m`                           |
