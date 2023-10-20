@@ -121,7 +121,7 @@ k8s-optimization:
     manager:
       image:
         repository: projects.registry.vmware.com/kubernetes-optimization-controller/k8s-optimization-controller
-        tag: 1.0.0-beta
+        tag: 0.2.0-beta
       resources:
         limits:
           cpu: 500m
