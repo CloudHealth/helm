@@ -5,7 +5,8 @@ apiVersion: v2
 name: cloudhealth-collector
 description: A Helm chart for CloudHealth's Kubernetes Collector Agent
 type: application
-category: Cost
+annotations:
+  category: Cost
 version: 4.1.0
 icon: https://d1fto35gcfffzn.cloudfront.net/images/Tanzu-Logomark.svg
 appVersion: "5.0.0"
