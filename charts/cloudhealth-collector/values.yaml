@@ -11,6 +11,9 @@ apiToken: ""
 # Required value, to be uniquely specified per deployment:
 clusterName: ""
 
+# default value for Region
+chtRegion: us-east-1
+
 # The remaining are default values
 collectionIntervalSecs: 900
 
@@ -24,8 +27,7 @@ jvmMemory: "-Xmx891M"
 
 image:
   repository: cloudhealth/container-collector
-  tag: "1360"
-  pullPolicy: "IfNotPresent"
+  tag: "1398"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -59,10 +61,6 @@ containerSecurityContext:
   capabilities: 
     drop: [all]
 
-service:
-  type: ClusterIP
-  port: 80
-
 resources:
   limits:
     cpu: 1000m
@@ -81,11 +79,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-# Role-based Access Control
-rbac:
-  # Specifies whether RBAC resources should be created
-  create: true
 
 devArgs: |
   ['upload_k8s_state_v4', '--verbose']

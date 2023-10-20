@@ -1,5 +1,7 @@
 .DS_Store
 _build
-*.tgz
 .vscode/
+.cr-release-packages/
+charts/cloudhealth-collector/charts/
 Chart.lock
+*.tgz

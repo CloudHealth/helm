@@ -1,0 +1,176 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": [
+        "apiToken",
+        "clusterName",
+        "chtRegion",
+        "collectionIntervalSecs",
+        "jvmMemory",
+        "image",
+        "secretName",
+        "serviceAccount",
+        "podSecurityContext",
+        "containerSecurityContext",
+        "resources",
+        "liveness",
+        "devArgs"
+    ],
+    "properties": {
+        "apiToken": {
+            "type": "string",
+            "pattern": "^.{6,48}$"
+        },
+        "clusterName": {
+            "type": "string",
+            "pattern": "^.{1,255}$"
+        },
+        "chtRegion": {
+            "type": "string",
+            "pattern": "^(us-east-1|us-east-2)$"
+        },
+        "collectionIntervalSecs": {
+            "type": "integer",
+            "minimum": 900
+        },
+        "jvmMemory": {
+            "type": "string"
+        },
+        "image": {
+            "type": "object",
+            "required": [
+                "repository",
+                "tag"
+            ],
+            "properties": {
+                "repository": {
+                    "type": "string"
+                },
+                "tag": {
+                    "type": "string"
+                }
+            }
+        },
+        "secretName": {
+            "type": "string"
+        },
+        "serviceAccount": {
+            "type": "object",
+            "required": [
+                "create"
+            ],
+            "properties": {
+                "create": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "podSecurityContext": {
+            "type": "object",
+            "required": [
+                "runAsNonRoot"
+            ],
+            "properties": {
+                "runAsNonRoot": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "containerSecurityContext": {
+            "type": "object",
+            "required": [
+                "allowPrivilegeEscalation",
+                "readOnlyRootFilesystem",
+                "runAsNonRoot",
+                "capabilities"
+            ],
+            "properties": {
+                "allowPrivilegeEscalation": {
+                    "type": "boolean"
+                },
+                "readOnlyRootFilesystem": {
+                    "type": "boolean"
+                },
+                "runAsNonRoot": {
+                    "type": "boolean"
+                },
+                "capabilities": {
+                    "type": "object",
+                    "default": {},
+                    "required": [
+                        "drop"
+                    ],
+                    "properties": {
+                        "drop": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "resources": {
+            "type": "object",
+            "required": [
+                "limits",
+                "requests"
+            ],
+            "properties": {
+                "limits": {
+                    "type": "object",
+                    "required": [
+                        "cpu",
+                        "memory"
+                    ],
+                    "properties": {
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "memory": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "requests": {
+                    "type": "object",
+                    "required": [
+                        "cpu",
+                        "memory"
+                    ],
+                    "properties": {
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "memory": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "liveness": {
+            "type": "object",
+            "required": [
+                "initialDelaySeconds",
+                "failureThreshold",
+                "periodSeconds"
+            ],
+            "properties": {
+                "initialDelaySeconds": {
+                    "type": "integer"
+                },
+                "failureThreshold": {
+                    "type": "integer"
+                },
+                "periodSeconds": {
+                    "type": "integer"
+                }
+            }
+        },
+        "devArgs": {
+            "type": "string"
+        }
+    }
+}
