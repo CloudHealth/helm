@@ -49,16 +49,13 @@ deployAnnotations: {}
 
 podAnnotations: {}
 
-podSecurityContext: {
-  runAsNonRoot: true
-}
+podSecurityContext: { runAsNonRoot: true }
 
-containerSecurityContext: {
+containerSecurityContext: 
   allowPrivilegeEscalation: false,
   readOnlyRootFilesystem: true,
   runAsNonRoot: true,
   capabilities: {drop: [all]}
-}
 
 service:
   type: ClusterIP
@@ -116,7 +113,7 @@ k8s-optimization:
           cpu: 500m
           memory: 128Mi
         requests:
-          cpu: 5m
+          cpu: 100m
           memory: 64Mi
     manager:
       image:
@@ -127,7 +124,7 @@ k8s-optimization:
           cpu: 500m
           memory: 128Mi
         requests:
-          cpu: 100m
+          cpu: 250m
           memory: 64Mi
     replicas: 1
     serviceAccount:

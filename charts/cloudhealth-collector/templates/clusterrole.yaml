@@ -22,3 +22,6 @@ rules:
 - apiGroups: ["batch"]
   resources: ["cronjobs", "jobs"]
   verbs: ["get", "list"]
+- apiGroups: ["cloudhealth.containers.com"]
+  resources: ["rz-recommendation-settings"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
