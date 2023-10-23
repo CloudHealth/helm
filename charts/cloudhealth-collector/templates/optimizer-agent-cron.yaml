@@ -30,7 +30,7 @@ spec:
                     name: {{ include "cloudhealth-collector.secretName" . }}
                     key: chapiKey
               - name: CHT_CLUSTER_NAME
-                value: {{.Values.clusterName | required "A valid clusterName required!" | quote }}
+                value: {{.Values.clusterName | required "A valid clusterName is required!" | quote }}
               - name: CHT_REGION
                 value: {{.Values.chtRegion | default "us-east-1" }}
               - name: SPRING_PROFILES_ACTIVE
