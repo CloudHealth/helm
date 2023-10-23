@@ -100,9 +100,6 @@ k8s-optimization:
   fullnameOverride: cloudhealth-optimization
   controllerManager:
     kubeRbacProxy:
-      image:
-        repository: gcr.io/kubebuilder/kube-rbac-proxy
-        tag: v0.13.0
       resources:
         limits:
           cpu: 500m
@@ -111,9 +108,6 @@ k8s-optimization:
           cpu: 100m
           memory: 64Mi
     manager:
-      image:
-        repository: projects.registry.vmware.com/kubernetes-optimization/k8s-optimization-controller
-        tag: 1.0.0-beta
       resources:
         limits:
           cpu: 500m
@@ -124,11 +118,3 @@ k8s-optimization:
     replicas: 1
     serviceAccount:
       annotations: {}
-  kubernetesClusterDomain: cluster.local
-  metricsService:
-    ports:
-    - name: https
-      port: 8443
-      protocol: TCP
-      targetPort: https
-    type: ClusterIP
