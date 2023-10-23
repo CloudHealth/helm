@@ -33,7 +33,7 @@ spec:
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default "latest" }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
@@ -61,7 +61,7 @@ spec:
                   name: {{ include "cloudhealth-collector.secretName" . }}
                   key: apiToken
             - name: CHT_CLUSTER_NAME
-              value: {{.Values.clusterName | required "A valid clusterName required!" | quote }}
+              value: {{.Values.clusterName | required "A valid clusterName is required!" | quote }}
             - name: CHT_REGION
               value: {{.Values.chtRegion | default "us-east-1" }}
             - name: CHT_INTERVAL

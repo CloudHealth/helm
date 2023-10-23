@@ -35,7 +35,7 @@ spec:
                 value: {{.Values.chtRegion | default "us-east-1" }}
               - name: SPRING_PROFILES_ACTIVE
                 value: {{.Values.optimizer.springProfile | default "prod" }}
-            image: "{{ .Values.optimizer.image.repository }}:{{ .Values.optimizer.image.tag | default .Chart.AppVersion }}"
+            image: "{{ .Values.optimizer.image.repository }}:{{ .Values.optimizer.image.tag | default "latest" }}"
             imagePullPolicy: {{ .Values.optimizer.image.pullPolicy }}
 
           {{- with .Values.nodeSelector }}
