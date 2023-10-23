@@ -5,6 +5,31 @@ entries:
       category: Cost
     apiVersion: v2
     appVersion: 5.1.0
+    created: "2023-10-23T14:12:36.427536382Z"
+    dependencies:
+    - condition: optimizer.enabled
+      name: k8s-optimization
+      repository: oci://projects.registry.vmware.com/kubernetes-optimization
+      version: 1.0.0-beta
+    description: A Helm chart for CloudHealth's Kubernetes Collector and Optimizer
+      Agent
+    digest: a9ae12effc638255bbafe66f46aeb3c340a5b61f162d30ec08e34619b2741c9c
+    home: https://cloudhealth.vmware.com/
+    icon: https://d1fto35gcfffzn.cloudfront.net/images/Tanzu-Logomark.svg
+    maintainers:
+    - email: cht-core-containers@groups.vmware.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-5.4.0-alpha/cloudhealth-collector-5.4.0-alpha.tgz
+    version: 5.4.0-alpha
+  - annotations:
+      category: Cost
+    apiVersion: v2
+    appVersion: 5.1.0
     created: "2023-10-23T14:08:47.954274593Z"
     dependencies:
     - condition: optimizer.enabled
@@ -609,15 +634,15 @@ entries:
     version: 5.0.1-alpha
   - apiVersion: v2
     appVersion: 4.1.0
-    created: "2023-10-13T01:32:37.173263673Z"
+    created: "2023-10-20T00:32:27.055185984Z"
     dependencies:
-    - condition: chOptimizer.enabled
-      name: cloudhealth-optimization-controller
-      repository: file://subcharts/cloudhealth-optimization-controller
-      version: 0.1.1
+    - condition: optimizer.enabled
+      name: k8s-optimization
+      repository: oci://projects.registry.vmware.com/kubernetes-optimization-controller
+      version: 0.2.0-beta
     description: A Helm chart for CloudHealth's Kubernetes Collector and Optimizer
       Agent
-    digest: 3e2be5167406e4d5de1454f8ff46d984d82546eb4fec1639511b2d1bd766568c
+    digest: 724926c14ce923f0af9e3ec0c94fb6b3a9e7426681179a8a5c8fd295d66b968f
     home: https://cloudhealth.vmware.com/
     maintainers:
     - email: cht-core-containers@groups.vmware.com
@@ -631,15 +656,15 @@ entries:
     version: 5.0.0-alpha
   - apiVersion: v2
     appVersion: 4.1.0
-    created: "2023-10-20T00:32:27.055185984Z"
+    created: "2023-10-13T01:32:37.173263673Z"
     dependencies:
-    - condition: optimizer.enabled
-      name: k8s-optimization
-      repository: oci://projects.registry.vmware.com/kubernetes-optimization-controller
-      version: 0.2.0-beta
+    - condition: chOptimizer.enabled
+      name: cloudhealth-optimization-controller
+      repository: file://subcharts/cloudhealth-optimization-controller
+      version: 0.1.1
     description: A Helm chart for CloudHealth's Kubernetes Collector and Optimizer
       Agent
-    digest: 724926c14ce923f0af9e3ec0c94fb6b3a9e7426681179a8a5c8fd295d66b968f
+    digest: 3e2be5167406e4d5de1454f8ff46d984d82546eb4fec1639511b2d1bd766568c
     home: https://cloudhealth.vmware.com/
     maintainers:
     - email: cht-core-containers@groups.vmware.com
@@ -782,4 +807,4 @@ entries:
     urls:
     - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-2.0.10/cloudhealth-collector-2.0.10.tgz
     version: 2.0.10
-generated: "2023-10-23T14:08:47.95473871Z"
+generated: "2023-10-23T14:12:36.427918081Z"
