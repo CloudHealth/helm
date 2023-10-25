@@ -10,6 +10,12 @@ The agent has been verified against:
 
 All versions before June 20, 2022 have been deprecated.
 
+## [1398] - 2023-10-23
+
+### Added
+
+* The collector docker image now supports multiple regions(us-east-1 & us-east-2). optional parameter `chtRegion` added. Default: `us-east-1`
+
 ## [1360] - 2023-07-19
 
 ### Added

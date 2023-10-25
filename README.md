@@ -23,7 +23,7 @@ Use the helm chart to deploy the CloudHealth Collector into each [Kubernetes](ht
 - Helm 3.0+
 - CloudHealth API Token
 
-## Installing the Chart
+## Installing the Collector Chart
 
 To install the chart with the release name `cloudhealth-collector`, run the following command:
 
@@ -36,7 +36,7 @@ To install the chart with the release name `cloudhealth-collector` in a particul
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector -n <target_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector -n <target_namespace> --create-namespace --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region> cloudhealth/cloudhealth-collector
 ```
 
 The `apiToken` is required for `cloudhealth-collector` to work and should be either set while running helm install command as in the example above or in a secret object with the following data structure:
@@ -48,6 +48,22 @@ data:
 These commands deploy the CloudHealth Collector on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
+
+## Installing the Collector & Optimizer Chart
+
+To install the chart with the release name `cloudhealth-collector-optimizer`, run the following command:
+
+```console
+$ helm repo add cloudhealth https://cloudhealth.github.io/helm/
+$ helm install cloudhealth-collector-optimizer --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region>,optimizer.enabled=true,chapiKey=<CloudHealth API Key> cloudhealth/cloudhealth-collector
+```
+
+To install the chart with the release name `cloudhealth-collector-optimizer` in a particular namespace `<target_namespace>`, run the following commands:
+
+```console
+$ helm repo add cloudhealth https://cloudhealth.github.io/helm/
+$ helm install cloudhealth-collector-optimizer -n <target_namespace> --create-namespace --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region>,optimizer.enabled=true,chapiKey=<CloudHealth API Key> cloudhealth/cloudhealth-collector
+```
 
 ## Updating the Chart
 
