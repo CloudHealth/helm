@@ -92,7 +92,6 @@ optimizer:
   image:
     repository: cloudhealth/cloudhealth-optimizer-agent
     tag: "latest"
-    pullPolicy: "IfNotPresent"
   # Set to automatically create secret, or create a secret with the name specified by the 'secretName' parameter
   chapiKey: ""
 
