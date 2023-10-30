@@ -37,6 +37,8 @@ spec:
                 value: {{.Values.optimizer.springProfile | default "prod" }}
             image: "{{ .Values.optimizer.image.repository }}:{{ .Values.optimizer.image.tag | default "latest" }}"
             imagePullPolicy: {{ .Values.optimizer.image.pullPolicy }}
+            resources:
+              {{- toYaml .Values.optimizer.resources | nindent 14 }}
 
           {{- with .Values.nodeSelector }}
           nodeSelector:

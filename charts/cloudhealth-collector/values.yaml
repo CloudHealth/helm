@@ -94,6 +94,13 @@ optimizer:
     tag: "latest"
   # Set to automatically create secret, or create a secret with the name specified by the 'secretName' parameter
   chapiKey: ""
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 128Mi
 
 k8s-optimization:
   fullnameOverride: cloudhealth-optimization
