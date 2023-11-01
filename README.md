@@ -25,14 +25,14 @@ Use the helm chart to deploy the CloudHealth Collector into each [Kubernetes](ht
 
 ## Installing the Collector Chart
 
-To install the chart with the release name `cloudhealth-collector`, run the following command:
+To install the chart with the release name `cloudhealth-collector` in the `default` namespace, run the following commands:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
 $ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region> cloudhealth/cloudhealth-collector
 ```
 
-To install the chart with the release name `cloudhealth-collector` in a particular namespace `<target_namespace>`, run the following commands:
+To install the chart with the release name `cloudhealth-collector` in a specified namespace `<target_namespace>`, run the following commands:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
@@ -51,14 +51,14 @@ These commands deploy the CloudHealth Collector on the Kubernetes cluster in the
 
 ## Installing the Collector & Optimizer Chart
 
-To install the chart with the release name `cloudhealth-collector-optimizer`, run the following command:
+To install the chart with the release name `cloudhealth-collector-optimizer` in the `default` namespace, run the following commands:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
 $ helm install cloudhealth-collector-optimizer --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region>,optimizer.enabled=true,chapiKey=<CloudHealth API Key> cloudhealth/cloudhealth-collector
 ```
 
-To install the chart with the release name `cloudhealth-collector-optimizer` in a particular namespace `<target_namespace>`, run the following commands:
+To install the chart with the release name `cloudhealth-collector-optimizer` in a specified namespace `<target_namespace>`, run the following commands:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
