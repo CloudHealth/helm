@@ -79,7 +79,7 @@ $ helm repo remove cloudhealth
 | Name                        | Description                                                                                       | Value                             |
 |-----------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------|
 | `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""`                              |
-| `chtRegion`                 | CloudHealth Region provided by CloudHealth (CloudHealth region where customer is onboarded)       | `us-east-1`                       |
+| `chtRegion`                 | Region provided by CloudHealth (region where VMware Tanzu CloudHealth account is onboarded)       | `us-east-1`                       |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector` |
 | `image.tag`                 | CloudHealth Collector image tag                                                                   | `1398`                            |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                    |
