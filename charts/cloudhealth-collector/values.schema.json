@@ -23,7 +23,7 @@
         },
         "clusterName": {
             "type": "string",
-            "pattern": "^.{1,255}$"
+            "pattern": "^[a-z0-9-_.]{6,255}$"
         },
         "chtRegion": {
             "type": "string",
