@@ -10,11 +10,17 @@ The agent has been verified against:
 
 All versions before June 20, 2022 have been deprecated.
 
-## [1398] - 2023-10-23
+## [1405] - 2023-11-06
 
 ### Added
 
-* The collector docker image now supports multiple regions(us-east-1 & us-east-2). optional parameter `chtRegion` added. Default: `us-east-1`
+* The collector docker image now contains more debugging logs for setting the new "region" environment variable.
+
+## [1398] - 2023-10-18
+
+### Added
+
+* The collector docker image now supports the "region" environment variable. This variable should be set to the region provided by CloudHealth corresponding to the CloudHealth region where your VMware Tanzu CloudHealth account is onboarded.
 
 ## [1360] - 2023-07-19
 
