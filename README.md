@@ -10,7 +10,7 @@ To avail this functionality, use this helm chart to deploy the collector agent i
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector
 ```
 
 ## Getting Started
@@ -29,14 +29,14 @@ To install the chart with the release name `cloudhealth-collector`, run the foll
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector
 ```
 
 To install the chart with the release name `cloudhealth-collector` in a particular namespace `<target_namespace>`, run the following commands:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector -n <target_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtRegion=<Cloudhealth Region> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector -n <target_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector
 ```
 
 The `apiToken` is required for `cloudhealth-collector` to work and should be either set while running helm install command as in the example above or in a secret object with the following data structure:
@@ -79,7 +79,7 @@ $ helm repo remove cloudhealth
 | Name                        | Description                                                                                       | Value                             |
 |-----------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------|
 | `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""`                              |
-| `chtRegion`                 | Region provided by CloudHealth (region where VMware Tanzu CloudHealth account is onboarded)       | `us-east-1`                       |
+| `chtEndpointPrefix`         | CloudHealth Endpoint prefix provided by CloudHealth                                               | `use1`                            |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector` |
 | `image.tag`                 | CloudHealth Collector image tag                                                                   | `1398`                            |
 | `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                    |
@@ -104,7 +104,7 @@ $ helm repo remove cloudhealth
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example, the following command sets the CloudHealth Collector API Token to `sample_token` and sets the cluster name to `mega-cluster`.
 
 ```console
-$ helm install cloudhealth-collector --set apiToken=sample_token,clusterName=mega-cluster,chtRegion=us-east-1 cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=sample_token,clusterName=mega-cluster,chtEndpointPrefix=use1 cloudhealth/cloudhealth-collector
 ```
 
 Example with `customEnvVars`

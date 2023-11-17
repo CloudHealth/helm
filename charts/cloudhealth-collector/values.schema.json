@@ -4,7 +4,7 @@
     "required": [
         "apiToken",
         "clusterName",
-        "chtRegion",
+        "chtEndpointPrefix",
         "collectionIntervalSecs",
         "jvmMemory",
         "image",
@@ -25,9 +25,9 @@
             "type": "string",
             "pattern": "^.{1,255}$"
         },
-        "chtRegion": {
+        "chtEndpointPrefix": {
             "type": "string",
-            "pattern": "^(us-east-1|us-east-2)$"
+            "pattern": "^(use1|preprod.test)$"
         },
         "collectionIntervalSecs": {
             "type": "integer",
