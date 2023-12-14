@@ -62,8 +62,8 @@ spec:
                   key: apiToken
             - name: CHT_CLUSTER_NAME
               value: {{.Values.clusterName | required "A valid clusterName required!" | quote }}
-            - name: CHT_REGION
-              value: {{.Values.chtRegion | default "us-east-1" }}
+            - name: CHT_ENDPOINT_PREFIX
+              value: {{.Values.chtEndpointPrefix | default "use1" }}
             - name: CHT_INTERVAL
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
