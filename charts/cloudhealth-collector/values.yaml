@@ -11,8 +11,8 @@ apiToken: ""
 # Required value, to be uniquely specified per deployment:
 clusterName: ""
 
-# default value for Region
-chtRegion: us-east-1
+# default cloudhealth endpoint prefix
+chtEndpointPrefix: use1
 
 # The remaining are default values
 collectionIntervalSecs: 900
@@ -27,7 +27,7 @@ jvmMemory: "-Xmx891M"
 
 image:
   repository: cloudhealth/container-collector
-  tag: "1405"
+  tag: "1423"
 
 imagePullSecrets: []
 nameOverride: ""

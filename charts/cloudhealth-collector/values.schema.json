@@ -3,7 +3,7 @@
     "type": "object",
     "required": [
         "clusterName",
-        "chtRegion",
+        "chtEndpointPrefix",
         "collectionIntervalSecs",
         "jvmMemory",
         "image",
@@ -24,9 +24,9 @@
             "type": "string",
             "pattern": "^[a-z0-9-_.]{3,255}$"
         },
-        "chtRegion": {
+        "chtEndpointPrefix": {
             "type": "string",
-            "pattern": "^(us-east-1|us-east-2)$"
+            "pattern": "^(use1|preprod.test)$"
         },
         "collectionIntervalSecs": {
             "type": "integer",
