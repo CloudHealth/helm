@@ -13,6 +13,6 @@ sources:
 - https://github.com/CloudHealth/helm
 maintainers:
   - name: CloudHealth Team
-    email: cht-core-containers@groups.vmware.com
+    email: cht-core-containers.pdl@broadcom.com
 annotations:
   category: Cost
