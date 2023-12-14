@@ -10,6 +10,14 @@ The agent has been verified against:
 
 All versions before June 20, 2022 have been deprecated.
 
+## [1423] - 2023-12-14
+
+### Added
+
+* The collector docker image now supports the "endpoint prefix" environment variable as a replacement for the "region"
+environment variable. This variable should be set to the endpoint prefix provided by CloudHealth.
+
+
 ## [1405] - 2023-11-06
 
 ### Added
