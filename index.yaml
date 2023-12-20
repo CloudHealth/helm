@@ -584,6 +584,25 @@ entries:
       category: Cost
     apiVersion: v2
     appVersion: 5.2.0
+    created: "2023-12-20T15:32:51.796208318Z"
+    description: A Helm chart for CloudHealth's Kubernetes Collector Agent
+    digest: 68291e526522b91fbade70dd4cd3f8e9ecc4406f28b9aedfc8104547becae37c
+    home: https://cloudhealth.vmware.com/
+    icon: https://d1fto35gcfffzn.cloudfront.net/images/Tanzu-Logomark.svg
+    maintainers:
+    - email: cht-core-containers.pdl@broadcom.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-4.3.1/cloudhealth-collector-4.3.1.tgz
+    version: 4.3.1
+  - annotations:
+      category: Cost
+    apiVersion: v2
+    appVersion: 5.2.0
     created: "2023-12-14T17:52:07.028043604Z"
     description: A Helm chart for CloudHealth's Kubernetes Collector Agent
     digest: f8682d897d17090ca05e96c12218ed0f8739b418acb07ac2e58490a2db5bd00c
@@ -768,4 +787,4 @@ entries:
     urls:
     - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-2.0.10/cloudhealth-collector-2.0.10.tgz
     version: 2.0.10
-generated: "2023-12-14T19:19:08.78486843Z"
+generated: "2023-12-20T15:32:51.79668238Z"
