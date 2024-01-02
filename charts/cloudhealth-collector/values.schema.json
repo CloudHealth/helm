@@ -17,8 +17,13 @@
     ],
     "properties": {
         "apiToken": {
-            "type": "string",
-            "pattern": "^.{6,48}$"
+            "anyOf": [{
+                    "type": "null"
+                }, {
+                    "type": "string",
+                    "pattern": "^(.{6,48}|)$"
+                }
+            ]
         },
         "clusterName": {
             "type": "string",
