@@ -31,8 +31,8 @@ spec:
                     key: chapiKey
               - name: CHT_CLUSTER_NAME
                 value: {{.Values.clusterName | required "A valid clusterName is required!" | quote }}
-              - name: CHT_REGION
-                value: {{.Values.chtRegion | default "us-east-1" }}
+              - name: CHT_ENDPOINT_PREFIX
+                value: {{.Values.chtEndpointPrefix | default "use1" }}
               - name: SPRING_PROFILES_ACTIVE
                 value: {{.Values.optimizer.springProfile | default "prod" }}
             image: "{{ .Values.optimizer.image.repository }}:{{ .Values.optimizer.image.tag | default "latest" }}"

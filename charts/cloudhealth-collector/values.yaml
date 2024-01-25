@@ -44,6 +44,9 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+# Sets pod's priorityClassName
+priorityClassName: ""
+
 # Custom labels to add to all resources created by this chart
 customLabels: {}
 
