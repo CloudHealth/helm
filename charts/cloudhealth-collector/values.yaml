@@ -94,7 +94,7 @@ optimizer:
   springProfile: prod
   image:
     repository: cloudhealth/cloudhealth-optimizer-agent
-    tag: "latest"
+    tag: "1.0.0-18"
   # Set to automatically create secret, or create a secret with the name specified by the 'secretName' parameter
   chapiKey: ""
   resources:
