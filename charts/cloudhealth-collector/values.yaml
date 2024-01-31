@@ -65,6 +65,14 @@ containerSecurityContext: {
   capabilities: {drop: [all]}
 }
 
+proxy:
+  sslCert: false
+  #-Dhttps.proxyHost=$PROXY_SERVER -Dhttps.proxyPort=$PROXY_PORT -Dhttps.nonProxyHosts=kubernetes.default.svc -Djavax.net.ssl.trustStore=/etc/ssl/certs/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit
+  params: ""
+  certPassword: ""
+  caBundlePath: "/etc/ssl/certs/bundle.pem"
+  truststorePath: "/etc/ssl/certs/truststore.jks"
+
 resources:
   limits:
     cpu: 1000m
