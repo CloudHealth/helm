@@ -4,6 +4,31 @@ entries:
   - annotations:
       category: Cost
     apiVersion: v2
+    appVersion: 5.3.0
+    created: "2024-01-31T16:08:17.091890093Z"
+    dependencies:
+    - condition: optimizer.enabled
+      name: k8s-optimization
+      repository: oci://projects.registry.vmware.com/kubernetes-optimization
+      version: 1.1.0
+    description: A Helm chart for CloudHealth's Kubernetes Collector and Optimizer
+      Agent
+    digest: d136ae32c96f693c6866abd004007681879e8008644ccf708f44e1a409717871
+    home: https://cloudhealth.vmware.com/
+    icon: https://d1fto35gcfffzn.cloudfront.net/images/Tanzu-Logomark.svg
+    maintainers:
+    - email: cht-core-containers.pdl@broadcom.com
+      name: CloudHealth Team
+    name: cloudhealth-collector
+    sources:
+    - https://github.com/CloudHealth/helm
+    type: application
+    urls:
+    - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-5.8.0-beta/cloudhealth-collector-5.8.0-beta.tgz
+    version: 5.8.0-beta
+  - annotations:
+      category: Cost
+    apiVersion: v2
     appVersion: 5.2.0
     created: "2024-01-29T02:17:17.558427434Z"
     dependencies:
@@ -881,4 +906,4 @@ entries:
     urls:
     - https://github.com/CloudHealth/helm/releases/download/cloudhealth-collector-2.0.10/cloudhealth-collector-2.0.10.tgz
     version: 2.0.10
-generated: "2024-01-29T02:17:17.558817111Z"
+generated: "2024-01-31T16:08:17.092488199Z"
