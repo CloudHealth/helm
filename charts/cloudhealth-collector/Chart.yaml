@@ -5,12 +5,12 @@ apiVersion: v2
 name: cloudhealth-collector
 description: A Helm chart for CloudHealth's Kubernetes Collector and Optimizer Agent
 type: application
-version: 5.8.0-beta
+version: 5.8.1-beta
 appVersion: "5.3.0"
 dependencies:
   - name: k8s-optimization
     repository: oci://projects.registry.vmware.com/kubernetes-optimization
-    version: 1.1.0
+    version: 1.1.1
     condition: optimizer.enabled
 home: https://cloudhealth.vmware.com/
 icon: https://d1fto35gcfffzn.cloudfront.net/images/Tanzu-Logomark.svg

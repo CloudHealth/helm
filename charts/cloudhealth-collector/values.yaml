@@ -100,10 +100,10 @@ optimizer:
   resources:
     limits:
       cpu: 1000m
-      memory: 512Mi
+      memory: 1024Mi
     requests:
-      cpu: 250m
-      memory: 128Mi
+      cpu: 500m
+      memory: 512Mi
 
 k8s-optimization:
   fullnameOverride: cloudhealth-optimization
@@ -112,18 +112,18 @@ k8s-optimization:
       resources:
         limits:
           cpu: 500m
-          memory: 128Mi
+          memory: 512Mi
         requests:
           cpu: 100m
-          memory: 64Mi
+          memory: 256Mi
     manager:
       resources:
         limits:
-          cpu: 500m
-          memory: 128Mi
+          cpu: 1000m
+          memory: 2048Mi
         requests:
-          cpu: 250m
-          memory: 64Mi
+          cpu: 500m
+          memory: 512Mi
     replicas: 1
     serviceAccount:
       annotations: {}
