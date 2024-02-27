@@ -32,6 +32,26 @@ spec:
       securityContext: {{- toYaml . | nindent 8 }}
       {{- end }}
       priorityClassName: {{ .Values.priorityClassName }}
+      {{- if .Values.proxy.sslCert }}
+      initContainers:
+        - name: "{{ .Chart.Name }}-pem-to-truststore"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          env:
+            - name: ca_bundle
+              value: {{ .Values.proxy.caBundlePath }}
+            - name: truststore_jks
+              value: {{ .Values.proxy.truststorePath }}
+            - name: truststore_pwd
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "cloudhealth-collector.secretName" . }}
+                  key: certPassword    
+          command: ['/bin/bash']
+          args: ['-c', "csplit -z -f crt- $ca_bundle '/-----BEGIN CERTIFICATE-----/' '{*}' && for file in crt-*; do keytool -import -noprompt -keystore $truststore_jks -file $file -storepass $truststore_pwd -alias service-$file; done"]
+          volumeMounts:
+            - name: truststore-volume
+              mountPath: /etc/ssl/certs 
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -69,6 +89,10 @@ spec:
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
               value: {{ .Values.jvmMemory }}
+            {{- if .Values.proxy.sslCert }}
+            - name: JAVA_OPTS
+              value: {{ .Values.proxy.params }}
+            {{- end }}
             {{- range .Values.customEnvVars}}
             - name: {{ .name }}
               value: {{ .value }}
@@ -101,4 +125,8 @@ spec:
       volumes:
         - name: tmpfs
           emptyDir: {}
+        {{- if .Values.proxy.sslCert }}
+        - name: truststore-volume
+          emptyDir: {}
+        {{- end }}
       {{- end }}
