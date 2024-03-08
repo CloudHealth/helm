@@ -10,6 +10,50 @@ The agent has been verified against:
 
 All versions before June 20, 2022 have been deprecated.
 
+## [1458] - 2024-03-11
+
+### Added
+
+* PersistentVolumes, PersistentVolumeClaims, Ingress and Service collected to prepare for comprehensive Kubernetes Cost Calculation
+
+### Security
+
+* Vulnerabilities patched:
+  * https://avd.aquasec.com/nvd/cve-2024-22365
+  * https://avd.aquasec.com/nvd/cve-2023-52425
+  * https://avd.aquasec.com/nvd/cve-2023-52426
+  * https://avd.aquasec.com/nvd/cve-2023-52425
+  * https://avd.aquasec.com/nvd/cve-2023-52426
+  * https://avd.aquasec.com/nvd/cve-2023-6780
+  * https://avd.aquasec.com/nvd/cve-2023-6246
+  * https://avd.aquasec.com/nvd/cve-2023-6779
+  * https://avd.aquasec.com/nvd/cve-2023-6780
+  * https://avd.aquasec.com/nvd/cve-2023-6246
+  * https://avd.aquasec.com/nvd/cve-2023-6779
+  * https://avd.aquasec.com/nvd/cve-2023-6780
+  * https://avd.aquasec.com/nvd/cve-2023-6246
+  * https://avd.aquasec.com/nvd/cve-2023-6779
+  * https://avd.aquasec.com/nvd/cve-2023-5981
+  * https://avd.aquasec.com/nvd/cve-2024-0553
+  * https://avd.aquasec.com/nvd/cve-2024-0567
+  * https://avd.aquasec.com/nvd/cve-2023-48795
+  * https://avd.aquasec.com/nvd/cve-2023-0767
+  * https://avd.aquasec.com/nvd/cve-2024-0727
+  * https://avd.aquasec.com/nvd/cve-2024-0727
+  * https://avd.aquasec.com/nvd/cve-2023-4641
+  * https://avd.aquasec.com/nvd/cve-2023-29383
+  * https://avd.aquasec.com/nvd/cve-2023-4641
+  * https://avd.aquasec.com/nvd/cve-2023-29383
+  * https://avd.aquasec.com/nvd/cve-2023-4641
+  * https://avd.aquasec.com/nvd/cve-2023-29383
+  * https://avd.aquasec.com/nvd/cve-2023-7104
+  * https://avd.aquasec.com/nvd/cve-2023-33202
+  * https://avd.aquasec.com/nvd/cve-2023-33202
+  * https://avd.aquasec.com/nvd/cve-2023-33201
+  * https://avd.aquasec.com/nvd/cve-2023-33201
+  * https://avd.aquasec.com/nvd/cve-2023-33202
+  * https://avd.aquasec.com/nvd/cve-2023-33202
+
 ## [1423] - 2023-12-14
 
 ### Added
