@@ -27,7 +27,7 @@
         },
         "clusterName": {
             "type": "string",
-            "pattern": "^.{1,255}$"
+            "pattern": "^[a-z0-9-_.]{3,255}$"
         },
         "chtEndpointPrefix": {
             "type": "string",
@@ -35,7 +35,7 @@
         },
         "collectionIntervalSecs": {
             "type": "integer",
-            "minimum": 900
+            "minimum": 600
         },
         "jvmMemory": {
             "type": "string"

@@ -1,0 +1,56 @@
+{{- /*
+Copyright 2023 VMware, Inc.
+SPDX-License-Identifier: Apache-2.0
+*/}}
+
+{{- if .Values.optimizer.enabled }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "cloudhealth-optimizer-agent.name" . }}
+  labels:
+    {{- include "cloudhealth-collector.labels" . | nindent 4 }}
+  {{- with .Values.deployAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  schedule: "0 12 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: {{ include "cloudhealth-collector.serviceAccountName" . }}
+          containers:
+          - name: {{ include "cloudhealth-optimizer-agent.name" . }}
+            env:
+              - name: CHAPI_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: {{ include "cloudhealth-collector.secretName" . }}
+                    key: chapiKey
+              - name: CHT_CLUSTER_NAME
+                value: {{.Values.clusterName | required "A valid clusterName is required!" | quote }}
+              - name: CHT_ENDPOINT_PREFIX
+                value: {{.Values.chtEndpointPrefix | default "use1" }}
+              - name: SPRING_PROFILES_ACTIVE
+                value: {{.Values.optimizer.springProfile | default "prod" }}
+            image: "{{ .Values.optimizer.image.repository }}:{{ .Values.optimizer.image.tag | default "latest" }}"
+            imagePullPolicy: {{ .Values.optimizer.image.pullPolicy }}
+            resources:
+              {{- toYaml .Values.optimizer.resources | nindent 14 }}
+
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          {{- with .Values.affinity }}
+          affinity:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          restartPolicy: OnFailure
+{{- end }}

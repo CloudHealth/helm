@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - gmudumbai/sdo-2649-k8s-optimizer
 
 jobs:
   release:
