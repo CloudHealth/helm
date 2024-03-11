@@ -25,18 +25,18 @@ Use the helm chart to deploy the CloudHealth Collector into each [Kubernetes](ht
 
 ## Installing the Chart
 
-To install the chart with the release name `cloudhealth-collector`, run the following command:
+To install the chart with the release name `cloudhealth-collector` in a particular namespace `<target_namespace>` (create if it does not exist), run the following commands:
+
+```console
+$ helm repo add cloudhealth https://cloudhealth.github.io/helm/
+$ helm install cloudhealth-collector -n <target_namespace> --create-namespace --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector --debug
+```
+
+To install the chart with the release name `cloudhealth-collector` in `default` namespace, run the following command:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
 $ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector
-```
-
-To install the chart with the release name `cloudhealth-collector` in a particular namespace `<target_namespace>`, run the following commands:
-
-```console
-$ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector -n <target_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector
 ```
 
 The `apiToken` is required for `cloudhealth-collector` to work and should be either set while running helm install command as in the example above or in a secret object with the following data structure:
