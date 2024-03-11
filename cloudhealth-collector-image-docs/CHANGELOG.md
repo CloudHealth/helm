@@ -5,7 +5,7 @@ All notable changes for each upgraded tag of the CloudHealth Container Collector
 The agent has been verified against:
 
 [Kubernetes Versions ≥ 1.12](https://kubernetes.io/releases/)</br>
-[Kubernetes Versions ≤ 1.26](https://kubernetes.io/releases/)</br>
+[Kubernetes Versions ≤ 1.29](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
 All versions before June 20, 2022 have been deprecated.
