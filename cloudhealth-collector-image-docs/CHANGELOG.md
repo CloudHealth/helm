@@ -19,9 +19,6 @@ All versions before June 20, 2022 have been deprecated.
 ### Security
 
 * Vulnerabilities patched:
-  * [CVE-2023-0553](https://avd.aquasec.com/nvd/cve-2024-0553)
-  * [CVE-2023-0567](https://avd.aquasec.com/nvd/cve-2024-0567)
-  * [CVE-2023-0727](https://avd.aquasec.com/nvd/cve-2024-0727)
   * [CVE-2023-0767](https://avd.aquasec.com/nvd/cve-2023-0767)
   * [CVE-2023-3320](https://avd.aquasec.com/nvd/cve-2023-3320)
   * [CVE-2023-4641](https://avd.aquasec.com/nvd/cve-2023-4641)
@@ -30,13 +27,16 @@ All versions before June 20, 2022 have been deprecated.
   * [CVE-2023-6779](https://avd.aquasec.com/nvd/cve-2023-6779)
   * [CVE-2023-6780](https://avd.aquasec.com/nvd/cve-2023-6780)
   * [CVE-2023-7104](https://avd.aquasec.com/nvd/cve-2023-7104)
-  * [CVE-2023-22365](https://avd.aquasec.com/nvd/cve-2024-22365)
   * [CVE-2023-29383](https://avd.aquasec.com/nvd/cve-2023-29383)
   * [CVE-2023-33201](https://avd.aquasec.com/nvd/cve-2023-33201)
   * [CVE-2023-33202](https://avd.aquasec.com/nvd/cve-2023-33202)
   * [CVE-2023-48795](https://avd.aquasec.com/nvd/cve-2023-48795)
   * [CVE-2023-52425](https://avd.aquasec.com/nvd/cve-2023-52425)
   * [CVE-2023-52426](https://avd.aquasec.com/nvd/cve-2023-52426)
+  * [CVE-2024-0553](https://avd.aquasec.com/nvd/cve-2024-0553)
+  * [CVE-2024-0567](https://avd.aquasec.com/nvd/cve-2024-0567)
+  * [CVE-2024-0727](https://avd.aquasec.com/nvd/cve-2024-0727)
+  * [CVE-2024-22365](https://avd.aquasec.com/nvd/cve-2024-22365)
 
 ## [1423] - 2023-12-14
 
