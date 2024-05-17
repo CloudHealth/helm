@@ -124,7 +124,8 @@ spec:
       {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }}
       volumes:
         - name: tmpfs
-          emptyDir: {}
+          emptyDir:
+            sizeLimit: 500Mi
         {{- if .Values.proxy.sslCert }}
         - name: truststore-volume
           emptyDir: {}
