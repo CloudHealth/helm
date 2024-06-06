@@ -54,16 +54,15 @@ deployAnnotations: {}
 
 podAnnotations: {}
 
-podSecurityContext: {
+podSecurityContext: 
   runAsNonRoot: true
-}
 
-containerSecurityContext: {
-  allowPrivilegeEscalation: false,
-  readOnlyRootFilesystem: true,
-  runAsNonRoot: true,
-  capabilities: {drop: [all]}
-}
+containerSecurityContext: 
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  capabilities: 
+    drop: [all]
 
 proxy:
   sslCert: false
@@ -96,3 +95,43 @@ devArgs: |
   ['upload_k8s_state_v4', '--verbose']
 
 customEnvVars: []
+
+optimizer:
+  enabled: false
+  name: cloudhealth-optimizer-agent
+  springProfile: prod
+  image:
+    repository: cloudhealth/cloudhealth-optimizer-agent
+    tag: "1.0.0-20"
+  # Set to automatically create secret, or create a secret with the name specified by the 'secretName' parameter
+  chapiKey: ""
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1024Mi
+    requests:
+      cpu: 500m
+      memory: 512Mi
+
+k8s-optimization:
+  fullnameOverride: cloudhealth-optimization
+  controllerManager:
+    kubeRbacProxy:
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 256Mi
+    manager:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 2048Mi
+        requests:
+          cpu: 500m
+          memory: 512Mi
+    replicas: 1
+    serviceAccount:
+      annotations: {}

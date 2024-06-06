@@ -25,3 +25,14 @@ rules:
 - apiGroups: ["networking.k8s.io"]
   resources: ["ingresses"]
   verbs: ["get", "list"]
+{{- if .Values.optimizer.enabled }}
+- apiGroups: ["cloudhealth.containers.com"]
+  resources: ["rz-recommendation-settings"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["apiextensions.k8s.io"]
+  resources: ["customresourcedefinitions"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["k8so.vmware.com"]
+  resources: ["optimizationrecommendations"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+{{- end }}

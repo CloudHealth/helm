@@ -3,7 +3,7 @@ name: Release Charts
 on:
   push:
     branches:
-      - main
+      - gmudumbai/sdo-2649-k8s-optimizer
 
 jobs:
   release:
@@ -22,6 +22,8 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.5.0
+        uses: helm/chart-releaser-action@v1.6.0
+        with:
+          mark_as_latest: false
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
