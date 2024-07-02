@@ -65,6 +65,9 @@ containerSecurityContext: {
   capabilities: {drop: [all]}
 }
 
+# -- Run the collector on the host network
+hostNetwork: false
+
 proxy:
   sslCert: false
   #-Dhttps.proxyHost=$PROXY_SERVER -Dhttps.proxyPort=$PROXY_PORT -Dhttps.nonProxyHosts=kubernetes.default.svc -Djavax.net.ssl.trustStore=/etc/ssl/certs/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit
