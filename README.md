@@ -94,6 +94,7 @@ $ helm repo remove cloudhealth
 | `podAnnotations`            | Additional pod annotations                                                                        | `{}`                              |
 | `podSecurityContext`        | Enable security context for CloudHealth Collector pods                                            | `{}`                              |
 | `securityContext`           | Enable security context for CloudHealth Collector                                                 | `{}`                              |
+| `hostNetwork`               | Run collector pod on Host Network                                                                 | `false`                           |
 | `affinity`                  | Affinity for pod assignment                                                                       | `{}`                              |
 | `nodeSelector`              | Node labels for pod assignment                                                                    | `{}`                              |
 | `tolerations`               | Tolerations for pod assignment                                                                    | `[]`                              |
