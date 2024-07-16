@@ -8,7 +8,7 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.29](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
-All versions before June 20, 2022 have been deprecated.
+All versions before June 20, 2022 (Version: 1191) have been deprecated.
 
 ## [1480] - 2024-07-16
 
