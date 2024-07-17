@@ -54,16 +54,15 @@ deployAnnotations: {}
 
 podAnnotations: {}
 
-podSecurityContext: {
+podSecurityContext:
   runAsNonRoot: true
-}
 
-containerSecurityContext: {
-  allowPrivilegeEscalation: false,
-  readOnlyRootFilesystem: true,
-  runAsNonRoot: true,
-  capabilities: {drop: [all]}
-}
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  capabilities: 
+    drop: [all]
 
 # -- Run the collector on the host network
 hostNetwork: false
