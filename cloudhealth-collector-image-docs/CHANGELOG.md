@@ -8,7 +8,39 @@ The agent has been verified against:
 [Kubernetes Versions ≤ 1.29](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
 
-All versions before June 20, 2022 have been deprecated.
+All versions before June 20, 2022 (Version: 1191) have been deprecated.
+
+## [1481] - 2024-07-19
+
+### Security
+
+* Vulnerabilities patched:
+  * [CVE-2023-5388](https://avd.aquasec.com/nvd/cve-2023-5388)
+  * [CVE-2023-46218](https://avd.aquasec.com/nvd/cve-2023-46218)
+  * [CVE-2023-46219](https://avd.aquasec.com/nvd/cve-2023-46219)
+  * [CVE-2024-2004](https://avd.aquasec.com/nvd/cve-2024-2004)
+  * [CVE-2024-2398](https://avd.aquasec.com/nvd/cve-2024-2398)
+  * [CVE-2024-2511](https://avd.aquasec.com/nvd/cve-2024-2511)
+  * [CVE-2024-2961](https://avd.aquasec.com/nvd/cve-2024-2961)
+  * [CVE-2024-4741](https://avd.aquasec.com/nvd/cve-2024-4741)
+  * [CVE-2024-5535](https://avd.aquasec.com/nvd/cve-2024-5535)
+  * [CVE-2024-26256](https://avd.aquasec.com/nvd/cve-2024-26256)
+  * [CVE-2024-26458](https://avd.aquasec.com/nvd/cve-2024-26458)
+  * [CVE-2024-26461](https://avd.aquasec.com/nvd/cve-2024-26461)
+  * [CVE-2024-26462](https://avd.aquasec.com/nvd/cve-2024-26462)
+  * [CVE-2024-28085](https://avd.aquasec.com/nvd/cve-2024-28085)
+  * [CVE-2024-28757](https://avd.aquasec.com/nvd/cve-2024-28757)
+  * [CVE-2024-28834](https://avd.aquasec.com/nvd/cve-2024-28834)
+  * [CVE-2024-28835](https://avd.aquasec.com/nvd/cve-2024-28835)
+  * [CVE-2024-29857](https://avd.aquasec.com/nvd/cve-2024-29857)
+  * [CVE-2024-30171](https://avd.aquasec.com/nvd/cve-2024-30171)
+  * [CVE-2024-30172](https://avd.aquasec.com/nvd/cve-2024-30172)
+  * [CVE-2024-33599](https://avd.aquasec.com/nvd/cve-2024-33599)
+  * [CVE-2024-33600](https://avd.aquasec.com/nvd/cve-2024-33600)
+  * [CVE-2024-33601](https://avd.aquasec.com/nvd/cve-2024-33601)
+  * [CVE-2024-33602](https://avd.aquasec.com/nvd/cve-2024-33602)
+  * [CVE-2024-34397](https://avd.aquasec.com/nvd/cve-2024-34397)
+  * [CVE-2024-34447](https://avd.aquasec.com/nvd/cve-2024-34447)
 
 ## [1458] - 2024-03-11
 

@@ -10,24 +10,24 @@ helm install cloudhealth-collector --debug --dry-run --set apiToken=$CHT_API_TOK
 
 To install helm for local collection dev testing:
 
-helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
+helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX --set devArgs="\['upload_k8s_state_v4'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
 
-helm upgrade cloudhealth-collector -n dmz --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\]" cloudhealth/cloudhealth-collector
+helm upgrade cloudhealth-collector -n dmz --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX --set devArgs="\['upload_k8s_state_v4'\,'--verbose'\]" cloudhealth/cloudhealth-collector
 
 helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=cloudhealth/container-collector-dev cloudhealth/cloudhealth-collector
 
 
-helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=latest-libs,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
+helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=latest-libs,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v4'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
 
-helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=metrics-collector-1,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
-helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=latest-libs-1,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
+helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=metrics-collector-1,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v4'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
+helm install cloudhealth-collector --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=latest-libs-1,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v4'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" cloudhealth/cloudhealth-collector
 
 
 --set "customEnvVars[0].name=ENV4" --set "customEnvVars[0].value=VALUE4"
 
-upload_k8s_state_v2 --verbose --endpoint http://<your_ip_address>:9292
+upload_k8s_state_v4 --verbose --endpoint http://<your_ip_address>:9292
 
 
-helm install cloudhealth-collector --debug --dry-run --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=latest-libs-06-13-3,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]",podSecurityContext.fsGroup=2000,containerSecurityContext.readOnlyRootFilesystem=true,containerSecurityContext.runAsNonRoot=true,containerSecurityContext.runAsUser=1000,containerSecurityContext.capabilities.drop={ALL} ./cloudhealth-collector-1.1.3.tgz
+helm install cloudhealth-collector --debug --dry-run --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=latest-libs-06-13-3,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v4'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]",podSecurityContext.fsGroup=2000,containerSecurityContext.readOnlyRootFilesystem=true,containerSecurityContext.runAsNonRoot=true,containerSecurityContext.runAsUser=1000,containerSecurityContext.capabilities.drop={ALL} ./cloudhealth-collector-1.1.3.tgz
 
-helm install cloudhealth-collector --debug --dry-run --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=latest-libs-06-13-3,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v2'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" --set "customEnvVars[0].name=ENV4" --set "customEnvVars[0].value=VALUE4" --set serviceAccount.name=sample_service_account ./cloudhealth-collector-1.1.2.tgz
+helm install cloudhealth-collector --debug --dry-run --set apiToken=$CHT_API_TOKEN,clusterName=$CHT_CLUSTER_NAME,chtEndpointPrefix=$CHT_ENDPOINT_PREFIX,image.repository=latest-libs-06-13-3,image.pullPolicy=Never --set devArgs="\['upload_k8s_state_v4'\,'--verbose'\,'--endpoint'\,'http://<your_ip_address>:9292'\]" --set "customEnvVars[0].name=ENV4" --set "customEnvVars[0].value=VALUE4" --set serviceAccount.name=sample_service_account ./cloudhealth-collector-1.1.2.tgz
