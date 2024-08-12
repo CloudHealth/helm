@@ -73,3 +73,10 @@ Create the name of the secrets to use
 {{- define "cloudhealth-collector.secretName" -}}
 {{- default .Values.secretName }}
 {{- end }}
+
+{{/*
+Create the name of the secrets to use for SSL Cert based proxy
+*/}}
+{{- define "cloudhealth-collector.certSercretName" -}}
+{{- default .Values.proxy.certSercretName }}
+{{- end }}

@@ -33,26 +33,6 @@ spec:
       {{- end }}
       priorityClassName: {{ .Values.priorityClassName }}
       hostNetwork: {{ .Values.hostNetwork }}
-      {{- if .Values.proxy.sslCert }}
-      initContainers:
-        - name: "{{ .Chart.Name }}-pem-to-truststore"
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          env:
-            - name: ca_bundle
-              value: {{ .Values.proxy.caBundlePath }}
-            - name: truststore_jks
-              value: {{ .Values.proxy.truststorePath }}
-            - name: truststore_pwd
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "cloudhealth-collector.secretName" . }}
-                  key: certPassword    
-          command: ['/bin/bash']
-          args: ['-c', "csplit -z -f crt- $ca_bundle '/-----BEGIN CERTIFICATE-----/' '{*}' && for file in crt-*; do keytool -import -noprompt -keystore $truststore_jks -file $file -storepass $truststore_pwd -alias service-$file; done"]
-          volumeMounts:
-            - name: truststore-volume
-              mountPath: /etc/ssl/certs 
-      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -75,6 +55,11 @@ spec:
           volumeMounts:
             - mountPath: /tmp
               name: tmpfs
+            {{- if .Values.proxy.sslCert }}
+            - mountPath: /etc/ssl/certs/{{ .Values.proxy.jksCertName }}
+              name: proxy-cert
+              subPath: {{ .Values.proxy.jksCertName }}
+            {{- end }}
           {{- end }}
           env:
             - name: CHT_API_TOKEN
@@ -90,9 +75,9 @@ spec:
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
               value: {{ .Values.jvmMemory }}
-            {{- if .Values.proxy.sslCert }}
+            {{- if or .Values.proxy.sslCert .Values.proxy.server }}
             - name: JAVA_OPTS
-              value: {{ .Values.proxy.params }}
+              value: {{ .Values.proxy.javaOpts }}
             {{- end }}
             {{- range .Values.customEnvVars}}
             - name: {{ .name }}
@@ -128,7 +113,8 @@ spec:
           emptyDir:
             sizeLimit: 500Mi
         {{- if .Values.proxy.sslCert }}
-        - name: truststore-volume
-          emptyDir: {}
+        - name: proxy-jks-volume
+          secret:
+            secretName: {{ include "cloudhealth-collector.certSercretName" . }}
         {{- end }}
       {{- end }}

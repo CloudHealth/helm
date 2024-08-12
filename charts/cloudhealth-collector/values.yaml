@@ -68,12 +68,13 @@ containerSecurityContext:
 hostNetwork: false
 
 proxy:
+  server: false
   sslCert: false
-  #-Dhttps.proxyHost=$PROXY_SERVER -Dhttps.proxyPort=$PROXY_PORT -Dhttps.nonProxyHosts=kubernetes.default.svc -Djavax.net.ssl.trustStore=/etc/ssl/certs/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit
-  params: ""
-  certPassword: ""
-  caBundlePath: "/etc/ssl/certs/bundle.pem"
-  truststorePath: "/etc/ssl/certs/truststore.jks"
+  certSercretName: "cloudhealth-proxy-cert"
+  jksCertName: "./proxy-cert.jks"
+  # -Dhttps.proxyHost=$PROXY_SERVER -Dhttps.proxyPort=$PROXY_PORT -Dhttps.nonProxyHosts=kubernetes.default.svc 
+  # -Djavax.net.ssl.trustStore=/etc/ssl/certs/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit
+  javaOpts: ""
 
 resources:
   limits:
