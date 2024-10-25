@@ -10,6 +10,32 @@ The agent has been verified against:
 
 All versions before June 20, 2022 (Version: 1191) have been deprecated.
 
+## [1498] - 2024-10-28
+
+### Security
+
+* Vulnerabilities patched:
+  * [CVE-2024-6197](https://avd.aquasec.com/nvd/cve-2024-6197)
+  * [CVE-2024-7264](https://avd.aquasec.com/nvd/cve-2024-7264)
+  * [CVE-2024-6197](https://avd.aquasec.com/nvd/cve-2024-6197)
+  * [CVE-2024-7264](https://avd.aquasec.com/nvd/cve-2024-7264)
+  * [CVE-2024-45491](https://avd.aquasec.com/nvd/cve-2024-45491)
+  * [CVE-2024-45492](https://avd.aquasec.com/nvd/cve-2024-45492)
+  * [CVE-2024-45490](https://avd.aquasec.com/nvd/cve-2024-45490)
+  * [CVE-2024-45491](https://avd.aquasec.com/nvd/cve-2024-45491)
+  * [CVE-2024-45492](https://avd.aquasec.com/nvd/cve-2024-45492)
+  * [CVE-2024-45490](https://avd.aquasec.com/nvd/cve-2024-45490)
+  * [CVE-2024-37371](https://avd.aquasec.com/nvd/cve-2024-37371)
+  * [CVE-2024-37370](https://avd.aquasec.com/nvd/cve-2024-37370)
+  * [CVE-2024-0743](https://avd.aquasec.com/nvd/cve-2024-0743)
+  * [CVE-2023-27043](https://avd.aquasec.com/nvd/cve-2023-27043)
+  * [CVE-2024-6923](https://avd.aquasec.com/nvd/cve-2024-6923)
+  * [CVE-2024-4032](https://avd.aquasec.com/nvd/cve-2024-4032)
+  * [CVE-2023-27043](https://avd.aquasec.com/nvd/cve-2023-27043)
+  * [CVE-2024-6923](https://avd.aquasec.com/nvd/cve-2024-6923)
+  * [CVE-2024-4032](https://avd.aquasec.com/nvd/cve-2024-4032)
+  * [CVE-2024-47554](https://avd.aquasec.com/nvd/cve-2024-47554)
+
 ## [1481] - 2024-07-19
 
 ### Security
