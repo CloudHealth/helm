@@ -1,4 +1,4 @@
-<!-- Copyright 2021 VMware, Inc. -->
+<!-- Copyright 2023 VMware, Inc. -->
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 # CloudHealth Kubernetes Collector Agent Helm Chart
 
@@ -10,7 +10,7 @@ To avail this functionality, use this helm chart to deploy the collector agent i
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector
 ```
 
 ## Getting Started
@@ -25,18 +25,18 @@ Use the helm chart to deploy the CloudHealth Collector into each [Kubernetes](ht
 
 ## Installing the Chart
 
-To install the chart with the release name `cloudhealth-collector`, run the following command:
+To install the chart with the release name `cloudhealth-collector` in a particular namespace `<target_namespace>` (create if it does not exist), run the following commands:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector -n <target_namespace> --create-namespace --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector --debug
 ```
 
-To install the chart with the release name `cloudhealth-collector` in a particular namespace `<target_namespace>`, run the following commands:
+To install the chart with the release name `cloudhealth-collector` in `default` namespace, run the following command:
 
 ```console
 $ helm repo add cloudhealth https://cloudhealth.github.io/helm/
-$ helm install cloudhealth-collector -n <target_namespace> --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name> cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=<Unique Customer API Token>,clusterName=<Cluster Name>,chtEndpointPrefix=<Cloudhealth Endpoint Prefix> cloudhealth/cloudhealth-collector
 ```
 
 The `apiToken` is required for `cloudhealth-collector` to work and should be either set while running helm install command as in the example above or in a secret object with the following data structure:
@@ -69,21 +69,21 @@ $ helm repo remove cloudhealth
 
 ### Required parameters
 
-| Name             | Description                                              | Value    |
-| ---------------- | -------------------------------------------------------- | -------- |
-| `clusterName`    | Name of the cluster to be shown on the CloudHealth UI    | `""`     |
+| Name          | Description                                           | Value    |
+|---------------|-------------------------------------------------------| -------- |
+| `clusterName` | Name of the cluster to be shown on the CloudHealth UI | `""`     |
 
 
 ### Other parameters
 
 | Name                        | Description                                                                                       | Value                             |
-| --------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------- |
+|-----------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------|
 | `apiToken`                  | Unique Customer API Token provided by CloudHealth                                                 | `""`                              |
+| `chtEndpointPrefix`         | CloudHealth Endpoint prefix provided by CloudHealth                                               | `use1`                            |
 | `image.repository`          | CloudHealth Collector image repository                                                            | `cloudhealth/container-collector` |
-| `image.tag`                 | CloudHealth Collector image tag                                                                   | `1203`                          |
-| `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                          |
+| `image.tag`                 | CloudHealth Collector image tag                                                                   | `1398`                            |
+| `image.pullPolicy`          | CloudHealth Collector image pull policy                                                           | `IfNotPresent`                    |
 | `image.pullSecrets`         | CloudHealth Collector image pull secrets                                                          | `[]`                              |
-| `replicaCount`              | Number of CloudHealth Collector replicas to deploy                                                | `1`                               |
 | `resources.limits.cpu`      | The CPU limits for CloudHealth Collector containers                                               | `1000m`                           |
 | `resources.requests.cpu`    | The requested CPU for CloudHealth Collector containers                                            | `500m`                            |
 | `resources.limits.memory`   | The Memory limits for CloudHealth Collector containers                                            | `1024Mi`                          |
@@ -91,11 +91,10 @@ $ helm repo remove cloudhealth
 | `nameOverride`              | String to override common.names.fullname                                                          | `""`                              |
 | `fullnameOverride`          | String to fully override common.names.fullname                                                    | `""`                              |
 | `secretName`                | Kubernetes secret name created to store CloudHealth API Token & Secret                            | `cloudhealth-config`              |
-| `service.type`              | CloudHealth Collector UI Service Type                                                             | `ClusterIP`                       |
-| `service.port`              | CloudHealth Collector UI Service Type                                                             | `80`                              |
 | `podAnnotations`            | Additional pod annotations                                                                        | `{}`                              |
 | `podSecurityContext`        | Enable security context for CloudHealth Collector pods                                            | `{}`                              |
 | `securityContext`           | Enable security context for CloudHealth Collector                                                 | `{}`                              |
+| `hostNetwork`               | Run collector pod on Host Network                                                                 | `false`                           |
 | `affinity`                  | Affinity for pod assignment                                                                       | `{}`                              |
 | `nodeSelector`              | Node labels for pod assignment                                                                    | `{}`                              |
 | `tolerations`               | Tolerations for pod assignment                                                                    | `[]`                              |
@@ -106,7 +105,7 @@ $ helm repo remove cloudhealth
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example, the following command sets the CloudHealth Collector API Token to `sample_token` and sets the cluster name to `mega-cluster`.
 
 ```console
-$ helm install cloudhealth-collector --set apiToken=sample_token,clusterName=mega-cluster cloudhealth/cloudhealth-collector
+$ helm install cloudhealth-collector --set apiToken=sample_token,clusterName=mega-cluster,chtEndpointPrefix=use1 cloudhealth/cloudhealth-collector
 ```
 
 Example with `customEnvVars`
@@ -120,7 +119,7 @@ You can also use YAML file to specify the parameters while installing the chart.
 $ helm install cloudhealth-collector -f values.yaml cloudhealth/cloudhealth-collector
 ```
 
-> **Tip**: You can use the default [values.yaml](cloudhealth-collector/values.yaml)
+> **Tip**: You can use the default [values.yaml](charts/cloudhealth-collector/values.yaml)
 
 ## Troubleshooting
 

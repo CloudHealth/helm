@@ -1,5 +1,5 @@
 {{- /*
-Copyright 2021 VMware, Inc.
+Copyright 2023 VMware, Inc.
 SPDX-License-Identifier: Apache-2.0
 */}}
 
@@ -9,10 +9,12 @@ metadata:
   name: {{ include "cloudhealth-collector.fullname" . }}
   labels:
     {{- include "cloudhealth-collector.labels" . | nindent 4 }}
-spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  {{- with .Values.deployAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
   {{- end }}
+spec:
+  replicas: 1
   selector:
     matchLabels:
       {{- include "cloudhealth-collector.selectorLabels" . | nindent 6 }}
@@ -26,8 +28,30 @@ spec:
         {{- include "cloudhealth-collector.labels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ include "cloudhealth-collector.serviceAccountName" . }}
-      {{- with .Values.podSecurityContext }} 
-      securityContext: {{- toYaml . | nindent 8 }} 
+      {{- with .Values.podSecurityContext }}
+      securityContext: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      priorityClassName: {{ .Values.priorityClassName }}
+      hostNetwork: {{ .Values.hostNetwork }}
+      {{- if .Values.proxy.sslCert }}
+      initContainers:
+        - name: "{{ .Chart.Name }}-pem-to-truststore"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          env:
+            - name: ca_bundle
+              value: {{ .Values.proxy.caBundlePath }}
+            - name: truststore_jks
+              value: {{ .Values.proxy.truststorePath }}
+            - name: truststore_pwd
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "cloudhealth-collector.secretName" . }}
+                  key: certPassword    
+          command: ['/bin/bash']
+          args: ['-c', "csplit -z -f crt- $ca_bundle '/-----BEGIN CERTIFICATE-----/' '{*}' && for file in crt-*; do keytool -import -noprompt -keystore $truststore_jks -file $file -storepass $truststore_pwd -alias service-$file; done"]
+          volumeMounts:
+            - name: truststore-volume
+              mountPath: /etc/ssl/certs 
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
@@ -44,13 +68,13 @@ spec:
             initialDelaySeconds: {{ .Values.liveness.initialDelaySeconds }}
             failureThreshold: {{ .Values.liveness.failureThreshold }}
             periodSeconds: {{ .Values.liveness.periodSeconds }}
-          {{- with .Values.containerSecurityContext }} 
-          securityContext: {{- toYaml . | nindent 12 }} 
+          {{- with .Values.containerSecurityContext }}
+          securityContext: {{- toYaml . | nindent 12 }}
           {{- end }}
           {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }}
-          volumeMounts: 
-            - mountPath: /tmp 
-              name: tmpfs 
+          volumeMounts:
+            - mountPath: /tmp
+              name: tmpfs
           {{- end }}
           env:
             - name: CHT_API_TOKEN
@@ -60,27 +84,33 @@ spec:
                   key: apiToken
             - name: CHT_CLUSTER_NAME
               value: {{.Values.clusterName | required "A valid clusterName required!" | quote }}
+            - name: CHT_ENDPOINT_PREFIX
+              value: {{.Values.chtEndpointPrefix | default "use1" }}
             - name: CHT_INTERVAL
               value: {{ .Values.collectionIntervalSecs | quote }}
             - name: CHT_JVM_MEM
               value: {{ .Values.jvmMemory }}
+            {{- if .Values.proxy.sslCert }}
+            - name: JAVA_OPTS
+              value: {{ .Values.proxy.params }}
+            {{- end }}
             {{- range .Values.customEnvVars}}
             - name: {{ .name }}
               value: {{ .value }}
             {{- end }}
           args: {{ .Values.devArgs }}
-      {{- with .Values.nodeSelector }}
 
       # Modify /etc/resolv.conf ndots
       {{ if .Values.dnsConfig }}
-          dnsConfig:
+      dnsConfig:
       {{- if .Values.dnsConfig.ndots }}
-            options:
-              - name: ndots
-                value: {{ .Values.dnsConfig.ndots | quote}}
+        options:
+          - name: ndots
+            value: {{ .Values.dnsConfig.ndots | quote}}
       {{- end }}
       {{- end }}
 
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
@@ -92,8 +122,13 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }} 
-      volumes: 
-        - name: tmpfs 
-          emptyDir: {} 
+      {{- if .Values.containerSecurityContext.readOnlyRootFilesystem }}
+      volumes:
+        - name: tmpfs
+          emptyDir:
+            sizeLimit: 500Mi
+        {{- if .Values.proxy.sslCert }}
+        - name: truststore-volume
+          emptyDir: {}
+        {{- end }}
       {{- end }}

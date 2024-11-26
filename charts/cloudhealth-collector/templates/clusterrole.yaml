@@ -1,5 +1,5 @@
 {{- /*
-Copyright 2021 VMware, Inc.
+Copyright 2023 VMware, Inc.
 SPDX-License-Identifier: Apache-2.0
 */}}
 
@@ -11,7 +11,7 @@ metadata:
     {{- include "cloudhealth-collector.labels" . | nindent 4 }}
 rules:
 - apiGroups: [""]
-  resources: ["pods", "nodes", "namespaces", "services", "resourcequotas", "limitranges"]
+  resources: ["pods", "nodes", "namespaces", "services", "resourcequotas", "limitranges", "persistentvolumes", "persistentvolumeclaims"]
   verbs: ["get", "list"]
 - apiGroups: ["metrics.k8s.io"]
   resources: ["pods", "nodes"]
@@ -21,4 +21,7 @@ rules:
   verbs: ["get", "list"]
 - apiGroups: ["batch"]
   resources: ["cronjobs", "jobs"]
+  verbs: ["get", "list"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses"]
   verbs: ["get", "list"]

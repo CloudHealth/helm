@@ -1,15 +1,18 @@
-# Copyright 2021 VMware, Inc.
+# Copyright 2023 VMware, Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 # Default values for cloudhealth-collector.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
-
-# Required values, to be specified per deployment:
+# Set to automatically create secret, or create a secret with the name specified by the 'secretName' parameter
 apiToken: ""
+
+# Required value, to be uniquely specified per deployment:
 clusterName: ""
+
+# default cloudhealth endpoint prefix
+chtEndpointPrefix: use1
 
 # The remaining are default values
 collectionIntervalSecs: 900
@@ -24,7 +27,7 @@ jvmMemory: "-Xmx891M"
 
 image:
   repository: cloudhealth/container-collector
-  tag: "1308"
+  tag: "1498"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -41,25 +44,36 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+# Sets pod's priorityClassName
+priorityClassName: ""
+
 # Custom labels to add to all resources created by this chart
 customLabels: {}
 
+deployAnnotations: {}
+
 podAnnotations: {}
 
-podSecurityContext: {
+podSecurityContext:
   runAsNonRoot: true
-}
 
-containerSecurityContext: {
-  allowPrivilegeEscalation: false,
-  readOnlyRootFilesystem: true,
-  runAsNonRoot: true,
-  capabilities: {drop: [all]}
-}
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  capabilities: 
+    drop: [all]
 
-service:
-  type: ClusterIP
-  port: 80
+# -- Run the collector on the host network
+hostNetwork: false
+
+proxy:
+  sslCert: false
+  #-Dhttps.proxyHost=$PROXY_SERVER -Dhttps.proxyPort=$PROXY_PORT -Dhttps.nonProxyHosts=kubernetes.default.svc -Djavax.net.ssl.trustStore=/etc/ssl/certs/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit
+  params: ""
+  certPassword: ""
+  caBundlePath: "/etc/ssl/certs/bundle.pem"
+  truststorePath: "/etc/ssl/certs/truststore.jks"
 
 resources:
   limits:
@@ -74,25 +88,13 @@ liveness:
   failureThreshold: 3
   periodSeconds: 300
 
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
-
 nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
 
-# Role-based Access Control
-rbac:
-  # Specifies whether RBAC resources should be created
-  create: true
-
 devArgs: |
-  ['upload_k8s_state_v3', '--verbose']
+  ['upload_k8s_state_v4', '--verbose']
 
 customEnvVars: []

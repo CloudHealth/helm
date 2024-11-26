@@ -5,8 +5,128 @@ All notable changes for each upgraded tag of the CloudHealth Container Collector
 The agent has been verified against:
 
 [Kubernetes Versions ≥ 1.12](https://kubernetes.io/releases/)</br>
-[Kubernetes Versions ≤ 1.26](https://kubernetes.io/releases/)</br>
+[Kubernetes Versions ≤ 1.29](https://kubernetes.io/releases/)</br>
 [OC Version ≥ 4.1](https://docs.openshift.com/container-platform)
+
+All versions before June 20, 2022 (Version: 1191) have been deprecated.
+
+## [1498] - 2024-10-28
+
+### Security
+
+* Vulnerabilities patched:
+  * [CVE-2024-6197](https://avd.aquasec.com/nvd/cve-2024-6197)
+  * [CVE-2024-7264](https://avd.aquasec.com/nvd/cve-2024-7264)
+  * [CVE-2024-6197](https://avd.aquasec.com/nvd/cve-2024-6197)
+  * [CVE-2024-7264](https://avd.aquasec.com/nvd/cve-2024-7264)
+  * [CVE-2024-45491](https://avd.aquasec.com/nvd/cve-2024-45491)
+  * [CVE-2024-45492](https://avd.aquasec.com/nvd/cve-2024-45492)
+  * [CVE-2024-45490](https://avd.aquasec.com/nvd/cve-2024-45490)
+  * [CVE-2024-45491](https://avd.aquasec.com/nvd/cve-2024-45491)
+  * [CVE-2024-45492](https://avd.aquasec.com/nvd/cve-2024-45492)
+  * [CVE-2024-45490](https://avd.aquasec.com/nvd/cve-2024-45490)
+  * [CVE-2024-37371](https://avd.aquasec.com/nvd/cve-2024-37371)
+  * [CVE-2024-37370](https://avd.aquasec.com/nvd/cve-2024-37370)
+  * [CVE-2024-0743](https://avd.aquasec.com/nvd/cve-2024-0743)
+  * [CVE-2023-27043](https://avd.aquasec.com/nvd/cve-2023-27043)
+  * [CVE-2024-6923](https://avd.aquasec.com/nvd/cve-2024-6923)
+  * [CVE-2024-4032](https://avd.aquasec.com/nvd/cve-2024-4032)
+  * [CVE-2023-27043](https://avd.aquasec.com/nvd/cve-2023-27043)
+  * [CVE-2024-6923](https://avd.aquasec.com/nvd/cve-2024-6923)
+  * [CVE-2024-4032](https://avd.aquasec.com/nvd/cve-2024-4032)
+  * [CVE-2024-47554](https://avd.aquasec.com/nvd/cve-2024-47554)
+
+## [1481] - 2024-07-19
+
+### Security
+
+* Vulnerabilities patched:
+  * [CVE-2023-5388](https://avd.aquasec.com/nvd/cve-2023-5388)
+  * [CVE-2023-46218](https://avd.aquasec.com/nvd/cve-2023-46218)
+  * [CVE-2023-46219](https://avd.aquasec.com/nvd/cve-2023-46219)
+  * [CVE-2024-2004](https://avd.aquasec.com/nvd/cve-2024-2004)
+  * [CVE-2024-2398](https://avd.aquasec.com/nvd/cve-2024-2398)
+  * [CVE-2024-2511](https://avd.aquasec.com/nvd/cve-2024-2511)
+  * [CVE-2024-2961](https://avd.aquasec.com/nvd/cve-2024-2961)
+  * [CVE-2024-4741](https://avd.aquasec.com/nvd/cve-2024-4741)
+  * [CVE-2024-5535](https://avd.aquasec.com/nvd/cve-2024-5535)
+  * [CVE-2024-26256](https://avd.aquasec.com/nvd/cve-2024-26256)
+  * [CVE-2024-26458](https://avd.aquasec.com/nvd/cve-2024-26458)
+  * [CVE-2024-26461](https://avd.aquasec.com/nvd/cve-2024-26461)
+  * [CVE-2024-26462](https://avd.aquasec.com/nvd/cve-2024-26462)
+  * [CVE-2024-28085](https://avd.aquasec.com/nvd/cve-2024-28085)
+  * [CVE-2024-28757](https://avd.aquasec.com/nvd/cve-2024-28757)
+  * [CVE-2024-28834](https://avd.aquasec.com/nvd/cve-2024-28834)
+  * [CVE-2024-28835](https://avd.aquasec.com/nvd/cve-2024-28835)
+  * [CVE-2024-29857](https://avd.aquasec.com/nvd/cve-2024-29857)
+  * [CVE-2024-30171](https://avd.aquasec.com/nvd/cve-2024-30171)
+  * [CVE-2024-30172](https://avd.aquasec.com/nvd/cve-2024-30172)
+  * [CVE-2024-33599](https://avd.aquasec.com/nvd/cve-2024-33599)
+  * [CVE-2024-33600](https://avd.aquasec.com/nvd/cve-2024-33600)
+  * [CVE-2024-33601](https://avd.aquasec.com/nvd/cve-2024-33601)
+  * [CVE-2024-33602](https://avd.aquasec.com/nvd/cve-2024-33602)
+  * [CVE-2024-34397](https://avd.aquasec.com/nvd/cve-2024-34397)
+  * [CVE-2024-34447](https://avd.aquasec.com/nvd/cve-2024-34447)
+
+## [1458] - 2024-03-11
+
+### Added
+
+* PersistentVolumes, PersistentVolumeClaims, Ingress and Service collected to prepare for comprehensive Kubernetes Cost Calculation
+
+### Security
+
+* Vulnerabilities patched:
+  * [CVE-2023-0767](https://avd.aquasec.com/nvd/cve-2023-0767)
+  * [CVE-2023-3320](https://avd.aquasec.com/nvd/cve-2023-3320)
+  * [CVE-2023-4641](https://avd.aquasec.com/nvd/cve-2023-4641)
+  * [CVE-2023-5981](https://avd.aquasec.com/nvd/cve-2023-5981)
+  * [CVE-2023-6246](https://avd.aquasec.com/nvd/cve-2023-6246)
+  * [CVE-2023-6779](https://avd.aquasec.com/nvd/cve-2023-6779)
+  * [CVE-2023-6780](https://avd.aquasec.com/nvd/cve-2023-6780)
+  * [CVE-2023-7104](https://avd.aquasec.com/nvd/cve-2023-7104)
+  * [CVE-2023-29383](https://avd.aquasec.com/nvd/cve-2023-29383)
+  * [CVE-2023-33201](https://avd.aquasec.com/nvd/cve-2023-33201)
+  * [CVE-2023-33202](https://avd.aquasec.com/nvd/cve-2023-33202)
+  * [CVE-2023-48795](https://avd.aquasec.com/nvd/cve-2023-48795)
+  * [CVE-2023-52425](https://avd.aquasec.com/nvd/cve-2023-52425)
+  * [CVE-2023-52426](https://avd.aquasec.com/nvd/cve-2023-52426)
+  * [CVE-2024-0553](https://avd.aquasec.com/nvd/cve-2024-0553)
+  * [CVE-2024-0567](https://avd.aquasec.com/nvd/cve-2024-0567)
+  * [CVE-2024-0727](https://avd.aquasec.com/nvd/cve-2024-0727)
+  * [CVE-2024-22365](https://avd.aquasec.com/nvd/cve-2024-22365)
+
+## [1423] - 2023-12-14
+
+### Added
+
+* The collector docker image now supports the "endpoint prefix" environment variable as a replacement for the "region"
+environment variable. This variable should be set to the endpoint prefix provided by CloudHealth.
+
+
+## [1405] - 2023-11-06
+
+### Added
+
+* The collector docker image now contains more debugging logs for setting the new "region" environment variable.
+
+## [1398] - 2023-10-18
+
+### Added
+
+* The collector docker image now supports the "region" environment variable. This variable should be set to the region provided by CloudHealth corresponding to the CloudHealth region where your VMware Tanzu CloudHealth account is onboarded.
+
+## [1360] - 2023-07-19
+
+### Added
+
+* The collector docker image now supports collecting the UID and kubernetes agent version.
+
+## [1325] - 2023-05-18
+
+### Changed
+
+* Updated base image for the CloudHealth Container Collector image to [Photon v.5](https://hub.docker.com/_/photon)
 
 ## [1308] - 2023-02-22
 
