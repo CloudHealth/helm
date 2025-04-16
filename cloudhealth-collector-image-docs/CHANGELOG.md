@@ -10,6 +10,19 @@ The agent has been verified against:
 
 All versions before June 20, 2022 (Version: 1191) have been deprecated.
 
+## [1500] - 2025-04-16
+
+### Fixed
+
+* Minor bug fix on the log message formatting when posting the collected resources to CloudHealth.
+
+### Security
+
+* Vulnerabilities patched:
+  * [CVE-2024-8176](https://avd.aquasec.com/nvd/cve-2024-8176)
+  * [CVE-2025-27363](https://avd.aquasec.com/nvd/cve-2025-27363)
+  * [CVE-2025-31115](https://avd.aquasec.com/nvd/cve-2025-31115)
+
 ## [1498] - 2024-10-28
 
 ### Security
